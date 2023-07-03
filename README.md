@@ -1,24 +1,7 @@
 # vue_fishing
 
-## Project setup
-```
-npm install
-```
+A SPA created in Vue including state management and unit testing - with a little bit of Composition API. This project is only for practicing purposes, please consider it before making any opinion about it. Every fix or change that can help building a better development for this application is welcome!
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+2023. 07. 03. - Creating project with default style-importing
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
