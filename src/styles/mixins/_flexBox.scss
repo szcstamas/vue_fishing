@@ -1,0 +1,18 @@
+@mixin flexColumnOnMobile($justify, $align, $gap: 1rem) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+}
+
+@mixin flexColumn($justify, $align, $gap: 1rem) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-direction: column;
+}

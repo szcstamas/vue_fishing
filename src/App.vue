@@ -1,18 +1,42 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <site-header />
+  <router-view />
 </template>
 
+<script>
+import SiteHeader from "./components/SiteHeader.vue";
+
+export default {
+  components: {
+    SiteHeader,
+  },
+};
+</script>
+
+//GLOBAL STYLE-DEFINITIONS
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  section {
+    padding-inline: 2rem;
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+
+      &__flex {
+        @include flexColumn(center, center, 0.5rem);
+      }
+    }
+  }
 }
 
 nav {
@@ -20,11 +44,23 @@ nav {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
-
+    color: $primary_color;
     &.router-link-exact-active {
-      color: #42b983;
+      color: $secondary_color;
     }
   }
+}
+</style>
+
+//GLOBAL CUSTOM-CLASSES
+<style lang="scss">
+.flex-column-mobile {
+  @include flexColumnOnMobile(center, center);
+}
+.flex-column {
+  @include flexColumn(center, center);
+}
+.grid-responsive-columns {
+  @include gridResponsiveColumnLayout();
 }
 </style>

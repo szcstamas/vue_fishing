@@ -1,0 +1,12 @@
+@mixin gridResponsiveColumnLayout($width: 100%, $minSize: 240px) {
+  width: $width;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax($minSize, 1fr));
+
+  @media (max-width: 500px) {
+    &--fullWidth {
+      width: 100%;
+    }
+  }
+}
