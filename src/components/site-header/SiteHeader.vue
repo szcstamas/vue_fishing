@@ -36,17 +36,22 @@
       />
     </div>
     <nav v-if="showMobileMenu" class="site-header__bottom-navigation">
-      <router-link to="/">Home</router-link>
-      <router-link to="/feeders-boilies">Feeders & Boilies</router-link>
-      <router-link to="/spinning">Spinning</router-link>
-      <router-link to="/contact">Contact</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link
+        v-for="(link, index) in headerLinkHrefs"
+        :style="{
+          background: `url('${headerLinkActiveBackgrounds[index]}') no-repeat center right`,
+          backgroundSize: '70%',
+        }"
+        :to="link"
+        >{{ headerLinkTexts[index] }}</router-link
+      >
     </nav>
   </header>
 </template>
 
 <script>
 import DarkGrayButton from "@/components/site-buttons/DarkGrayButton.vue";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   components: {
@@ -59,6 +64,14 @@ export default {
       showMobileMenuText: "Show menu",
       hideMobileMenuText: "Hide menu",
     };
+  },
+
+  computed: {
+    ...mapState([
+      "headerLinkHrefs",
+      "headerLinkTexts",
+      "headerLinkActiveBackgrounds",
+    ]),
   },
 };
 </script>
@@ -200,55 +213,53 @@ export default {
     border-right: none;
 
     a {
+      isolation: isolate;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $primary_color_white;
       text-align: center;
+      background-color: $primary_color_white;
+      color: $secondary_color_dark_gray;
       width: 100%;
       padding: 1rem;
-      text-transform: uppercase;
       letter-spacing: 1px;
-      color: $secondary_color_dark_gray;
+      text-transform: uppercase;
       transition: color 0.1s ease-in-out;
 
       &:hover {
         color: $primary_color_dark_blue;
       }
 
+      &::after {
+        content: "";
+        background: #ffffff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+      }
+
       &.router-link-exact-active {
         color: $primary_color_dark_blue;
         font-weight: bold;
         position: relative;
+        overflow: hidden;
 
         &::after {
           content: "";
-
+          background: linear-gradient(45deg, #ffffff, #ffffff, transparent);
+          width: 100%;
+          height: 100%;
           position: absolute;
-          right: 20px;
-          top: -20%;
-          display: block;
-          background: url("@/assets/images/site-header__active.png") no-repeat
-            center center;
-          background-size: cover;
-          width: 70px;
-          height: 70px;
+          z-index: -1;
 
-          animation: rotate-hook 4s ease-in-out infinite;
+          transition: all 2s ease-in-out;
+          animation: appear 2s ease-in-out linear;
 
-          @keyframes rotate-hook {
-            0% {
-              rotate: 0deg;
-            }
-            33.333% {
-              rotate: 20deg;
-            }
-            66.666% {
-              rotate: -20deg;
-            }
-            100% {
-              rotate: 0deg;
-            }
+          @keyframes appear {
+            0% { transform: scale(3); }
+            100% { transform: scale(1); }
           }
         }
 
@@ -287,12 +298,6 @@ export default {
               transform: translate(-50%, -50%);
               opacity: 0;
             }
-          }
-        }
-
-        @media screen and (max-width: 1000px) {
-          &::after {
-            display: none;
           }
         }
       }

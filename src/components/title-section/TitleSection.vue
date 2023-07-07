@@ -31,6 +31,9 @@ export default {
 
 <style lang="scss" scoped>
 .title-section {
+  background: url("@/assets/images/landing-page__hero.jpg") no-repeat center top;
+  background-size: cover;
+
   &__container {
     padding-block: 15rem 30rem;
   }

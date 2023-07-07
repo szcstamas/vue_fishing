@@ -31,8 +31,6 @@ body {
 
   section {
     padding-inline: 2rem;
-    background: url('@/assets/images/landing-page__hero.jpg') no-repeat center top;
-    background-size: cover;
 
     .container {
       max-width: 1200px;
