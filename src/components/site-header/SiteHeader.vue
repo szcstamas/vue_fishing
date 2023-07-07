@@ -152,6 +152,11 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       color: $secondary_color_dark_gray;
+      transition: color .1s ease-in-out;
+
+      &:hover {
+        color: $primary_color;
+      }
 
       &.router-link-exact-active {
         color: $primary_color;
