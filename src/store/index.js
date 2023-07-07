@@ -4,10 +4,10 @@ export default createStore({
   state: {
     headerLinkHrefs: [
       "/",
-      "/feeders-boilies",
+      "/feeders-and-boilies",
       "/spinning",
       "/contact",
-      "/about",
+      "/about", 
     ],
     headerLinkTexts: [
       "Home",

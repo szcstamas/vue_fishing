@@ -222,7 +222,7 @@ export default {
       background-color: $primary_color_white;
       color: $secondary_color_dark_gray;
       width: 100%;
-      padding: 1rem;
+      padding: 2rem;
       letter-spacing: 1px;
       text-transform: uppercase;
       transition: color 0.1s ease-in-out;
