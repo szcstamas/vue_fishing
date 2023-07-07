@@ -1,7 +1,7 @@
 <template>
   <header class="site-header">
     <div class="site-header__top-line">
-      <div class="site-header__search-form">
+      <div class="site-header__search-form site-header--display-none-tablet">
         <form action="">
           <input type="text" placeholder="Search..." />
           <input type="submit" value="SEARCH" />
@@ -23,7 +23,18 @@
         <a href="#">HU</a>
       </div>
     </div>
-    <nav class="site-header__bottom-navigation">
+    <div class="site-header__middle-line site-header--display-on-tablet">
+      <form action="">
+        <input type="text" placeholder="Search..." />
+        <input type="submit" value="SEARCH" />
+      </form>
+    </div>
+    <div class="site-header__button-line site-header--display-on-tablet">
+      <button @click="showMobileMenu = !showMobileMenu">
+        {{ showMobileMenu ? hideMobileMenuText : showMobileMenuText }}
+      </button>
+    </div>
+    <nav v-if="showMobileMenu" class="site-header__bottom-navigation">
       <router-link to="/">Home</router-link>
       <router-link to="/feeders-boilies">Feeders & Boilies</router-link>
       <router-link to="/spinning">Spinning</router-link>
@@ -33,9 +44,21 @@
   </header>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      showMobileMenu: true,
+      showMobileMenuText: "Show menu",
+      hideMobileMenuText: "Hide menu",
+    };
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .site-header {
-  @include flexColumn(center, center);
+  @include flexColumn(center, center, 0);
   background-color: #ffffff;
   width: 100%;
   position: sticky;
@@ -47,7 +70,7 @@
   }
 
   &__top-line {
-    @include flexColumnOnMobile(space-between, center);
+    @include flexColumnOnMobile(space-between, center, 1rem, column, 300px);
 
     width: 100%;
     max-width: 1400px;
@@ -60,6 +83,46 @@
       @include flexColumnOnMobile(center, center);
 
       margin-right: auto;
+
+      input[type="submit"] {
+        width: 100%;
+      }
+    }
+  }
+
+  &__middle-line {
+    @include flexColumnOnMobile(center, center, 0rem, row);
+    width: 100%;
+
+    form {
+      width: 100%;
+
+      input[type="text"],
+      input[type="submit"] {
+        width: 100%;
+        border-radius: 0;
+      }
+    }
+  }
+
+  &__button-line {
+    @include flexColumn(center, center);
+    height: 100%;
+    width: 100%;
+
+    button {
+      appearance: none;
+      border: none;
+      outline: none;
+      color: $primary_color_white;
+      background-color: $secondary_color_dark_gray;
+      font-family: inherit;
+      font-weight: bold;
+      font-size: 16px;
+      text-transform: uppercase;
+      width: 100%;
+      padding: 1rem;
+      cursor: pointer;
     }
   }
 
@@ -68,8 +131,8 @@
       width: clamp(150px, 100%, 250px);
 
       img {
+        width: clamp(150px, 100%, 250px);
         object-fit: cover;
-        width: 100%;
         opacity: 0.75;
         margin: auto;
         display: block;
@@ -134,10 +197,11 @@
   }
 
   &__bottom-navigation {
-    @include flexColumnOnMobile(space-between, center, 2px);
+    @include flexColumnOnMobile(space-between, stretch, 2px);
 
     width: 100%;
     margin: auto;
+    margin-top: 1rem;
 
     background-color: $secondary_color_light_gray;
     border: 2px solid $secondary_color_light_gray;
@@ -145,6 +209,9 @@
     border-right: none;
 
     a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: $primary_color_white;
       text-align: center;
       width: 100%;
@@ -152,7 +219,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       color: $secondary_color_dark_gray;
-      transition: color .1s ease-in-out;
+      transition: color 0.1s ease-in-out;
 
       &:hover {
         color: $primary_color;
@@ -167,7 +234,7 @@
           content: "";
 
           position: absolute;
-          right: 30%;
+          right: 20px;
           top: -20%;
           display: block;
           background: url("@/assets/images/site-header__active.png") no-repeat
@@ -206,20 +273,24 @@
           transform: translate(-50%, -50%);
           opacity: 0;
 
-          animation: slide 4s ease-in-out infinite;
+          animation: slide-and-extend 8s ease-in-out infinite;
 
-          @keyframes slide {
+          @keyframes slide-and-extend {
             0% {
               transform: translate(-50%, -50%);
               opacity: 0;
             }
-            20% {
-              transform: translate(-50%, 200%);
+            10% {
+              transform: translate(-50%, 15px);
               opacity: 1;
+              width: 10%;
+              height: 2px;
             }
-            80% {
-              transform: translate(-50%, 200%);
+            90% {
+              transform: translate(-50%, 15px);
               opacity: 1;
+              width: 10%;
+              height: 2px;
             }
             100% {
               transform: translate(-50%, -50%);
@@ -227,7 +298,32 @@
             }
           }
         }
+
+        @media screen and (max-width: 1000px) {
+          &::after {
+            display: none;
+          }
+        }
       }
+    }
+
+    @media screen and (max-width: 750px) {
+      margin-top: 0;
+    }
+  }
+
+  /* MEDIA QUERY CLASSES */
+  &--display-on-tablet {
+    display: none;
+
+    @media screen and (max-width: 750px) {
+      display: flex;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    &--display-none-tablet {
+      display: none;
     }
   }
 }

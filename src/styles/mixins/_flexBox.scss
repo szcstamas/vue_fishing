@@ -1,11 +1,11 @@
-@mixin flexColumnOnMobile($justify, $align, $gap: 1rem) {
+@mixin flexColumnOnMobile($justify, $align, $gap: 1rem, $mobileDirection: column, $mobileMaxWidth: 560px) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
   gap: $gap;
 
-  @media (max-width: 500px) {
-    flex-direction: column;
+  @media (max-width: $mobileMaxWidth) {
+    flex-direction: $mobileDirection;
   }
 }
 
