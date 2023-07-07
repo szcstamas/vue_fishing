@@ -1,9 +1,12 @@
 <template>
-  <section>
-    <div class="container">
-      <div class="container__flex">
-        <h1>Home page</h1>
-      </div>
-    </div>
-  </section>
+  <title-section />
 </template>
+
+<script>
+import TitleSection from '@/components/title-section/TitleSection.vue'
+
+export default {
+  components: { TitleSection },
+  
+}
+</script>

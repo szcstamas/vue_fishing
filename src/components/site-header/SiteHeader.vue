@@ -30,9 +30,10 @@
       </form>
     </div>
     <div class="site-header__button-line site-header--display-on-tablet">
-      <button @click="showMobileMenu = !showMobileMenu">
-        {{ showMobileMenu ? hideMobileMenuText : showMobileMenuText }}
-      </button>
+      <dark-gray-button
+        :buttonText="showMobileMenu ? hideMobileMenuText : showMobileMenuText"
+        @button-event="showMobileMenu = !showMobileMenu"
+      />
     </div>
     <nav v-if="showMobileMenu" class="site-header__bottom-navigation">
       <router-link to="/">Home</router-link>
@@ -45,7 +46,13 @@
 </template>
 
 <script>
+import DarkGrayButton from "@/components/site-buttons/DarkGrayButton.vue";
+
 export default {
+  components: {
+    DarkGrayButton,
+  },
+
   data() {
     return {
       showMobileMenu: true,
@@ -61,11 +68,10 @@ export default {
   @include flexColumn(center, center, 0);
   background-color: #ffffff;
   width: 100%;
-  position: sticky;
 
   a {
     font-weight: bold;
-    color: $primary_color;
+    color: $primary_color_dark_blue;
     text-decoration: none;
   }
 
@@ -109,21 +115,6 @@ export default {
     @include flexColumn(center, center);
     height: 100%;
     width: 100%;
-
-    button {
-      appearance: none;
-      border: none;
-      outline: none;
-      color: $primary_color_white;
-      background-color: $secondary_color_dark_gray;
-      font-family: inherit;
-      font-weight: bold;
-      font-size: 16px;
-      text-transform: uppercase;
-      width: 100%;
-      padding: 1rem;
-      cursor: pointer;
-    }
   }
 
   &__logo-container {
@@ -165,7 +156,7 @@ export default {
         transform: translate(-50%, -50%) scale(0);
         transform-origin: center;
         border-radius: 4px;
-        background-color: $primary_color;
+        background-color: $primary_color_dark_blue;
         transition: all 0.1s ease-in-out;
         z-index: -1;
       }
@@ -181,7 +172,7 @@ export default {
     }
 
     span {
-      color: $primary_color;
+      color: $primary_color_dark_blue;
       font-weight: bold;
       padding-inline: 2rem;
     }
@@ -222,11 +213,11 @@ export default {
       transition: color 0.1s ease-in-out;
 
       &:hover {
-        color: $primary_color;
+        color: $primary_color_dark_blue;
       }
 
       &.router-link-exact-active {
-        color: $primary_color;
+        color: $primary_color_dark_blue;
         font-weight: bold;
         position: relative;
 
@@ -266,7 +257,7 @@ export default {
           position: absolute;
           height: 10px;
           width: 10px;
-          background-color: $primary_color;
+          background-color: $primary_color_dark_blue;
           border-radius: 50%;
           left: 50%;
           top: 50%;

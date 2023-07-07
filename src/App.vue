@@ -31,6 +31,8 @@ body {
 
   section {
     padding-inline: 2rem;
+    background: url('@/assets/images/landing-page__hero.jpg') no-repeat center top;
+    background-size: cover;
 
     .container {
       max-width: 1200px;
@@ -52,6 +54,16 @@ h5,
 h6 {
   font-family: "Roboto Slab", "Ubuntu", "Segoe UI", Tahoma, Geneva, Verdana,
     sans-serif;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+p, span {
+  font-size: 16px;
+  line-height: 24px;
 }
 
 form {
@@ -80,7 +92,7 @@ form {
 
   input[type="submit"] {
     cursor: pointer;
-    background-color: $primary_color;
+    background-color: $primary_color_dark_blue;
     color: $primary_color_white;
     transition: all 0.1s ease-in-out;
     font-weight: bold;
@@ -89,6 +101,16 @@ form {
       background-color: $secondary_color_dark_green;
     }
   }
+}
+
+*::-webkit-scrollbar {
+  width: 25px;
+  background-color: $primary_color_dark_blue;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 6px solid $primary_color_dark_blue;
+  background-color: $primary_color_white;
 }
 </style>
 
