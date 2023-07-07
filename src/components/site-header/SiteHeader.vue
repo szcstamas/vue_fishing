@@ -9,10 +9,12 @@
       </div>
 
       <div class="site-header__logo-container">
-        <img
-          src="@/assets/images/site-header__logo.png"
-          alt="Fishing site header logo"
-        />
+        <router-link to="/">
+          <img
+            src="@/assets/images/site-header__logo.png"
+            alt="Fishing site header logo"
+          />
+        </router-link>
       </div>
 
       <div class="site-header__language-container">
@@ -62,10 +64,16 @@
   }
 
   &__logo-container {
-    img {
+    a {
       width: clamp(150px, 100%, 250px);
-      object-fit: cover;
-      opacity: 0.75;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        opacity: 0.75;
+        margin: auto;
+        display: block;
+      }
     }
   }
 
