@@ -240,6 +240,24 @@ export default {
         z-index: -1;
       }
 
+      &::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 1px;
+        background-color: $primary_color_dark_blue;
+        left: 50%;
+        top: 50%;
+        transition: all .1s ease-in-out;
+        transform: translate(-50%, 700%);
+        opacity: 0;
+      }
+
+      &:hover:before {
+        width: 30px;
+        opacity: 1;
+      }
+
       &.router-link-exact-active {
         color: $primary_color_dark_blue;
         font-weight: bold;
@@ -258,47 +276,25 @@ export default {
           animation: appear 2s ease-in-out linear;
 
           @keyframes appear {
-            0% { transform: scale(3); }
-            100% { transform: scale(1); }
+            0% {
+              transform: scale(3);
+            }
+            100% {
+              transform: scale(1);
+            }
           }
         }
 
         &::before {
           content: "";
           position: absolute;
-          height: 10px;
-          width: 10px;
+          height: 2px;
+          width: 30px;
           background-color: $primary_color_dark_blue;
-          border-radius: 50%;
           left: 50%;
           top: 50%;
-          transform: translate(-50%, -50%);
-          opacity: 0;
-
-          animation: slide-and-extend 8s ease-in-out infinite;
-
-          @keyframes slide-and-extend {
-            0% {
-              transform: translate(-50%, -50%);
-              opacity: 0;
-            }
-            10% {
-              transform: translate(-50%, 15px);
-              opacity: 1;
-              width: 10%;
-              height: 2px;
-            }
-            90% {
-              transform: translate(-50%, 15px);
-              opacity: 1;
-              width: 10%;
-              height: 2px;
-            }
-            100% {
-              transform: translate(-50%, -50%);
-              opacity: 0;
-            }
-          }
+          transform: translate(-50%, 700%);
+          opacity: 1!important;
         }
       }
     }
