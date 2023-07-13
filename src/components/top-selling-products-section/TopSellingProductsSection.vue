@@ -15,7 +15,7 @@
           </div>
           <h4>{{ product.headline }}</h4>
           <div class="top-selling-products-section__rating-container">
-            {{ getNumberOfStars(product.rating) }}
+            {{ starRatings[product.rating] }}
           </div>
           <div class="top-selling-products-section__price-container">
             {{ product.productPrice }}
@@ -37,31 +37,10 @@ export default {
   },
 
   computed: {
-    ...mapState(["topSellingProducts"]),
-    ratingStarsOfTopProducts() {},
+    ...mapState(["topSellingProducts", "starRatings"]),
   },
 
-  methods: {
-    getNumberOfStars(number) {
-      switch (number) {
-        case 1:
-          return "⭐";
-          break;
-        case 2:
-          return "⭐⭐";
-          break;
-        case 3:
-          return "⭐⭐⭐";
-          break;
-        case 4:
-          return "⭐⭐⭐⭐";
-          break;
-        case 5:
-          return "⭐⭐⭐⭐⭐";
-          break;
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -81,14 +60,17 @@ export default {
 
   &__item-container {
     @include flexColumnOnMobile(flex-start, stretch, 8rem, column, 1100px);
+    flex-wrap: wrap;
 
-    @media screen and (max-width: 1400px) { @include flexColumnOnMobile(flex-start, stretch, 4rem); }
-    @media screen and (max-width: 800px) { @include flexColumnOnMobile(flex-start, stretch, 2rem); }
+    @media screen and (max-width: 1500px) {
+      gap: 3rem;
+    }
   }
 
   &__item-box {
     @include flexColumn(space-between, stretch);
     flex: 1;
+    min-width: 300px;
 
     &__image-container {
       width: 100%;

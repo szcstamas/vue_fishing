@@ -62,7 +62,14 @@ export default createStore({
         productPrice: "8.45 €",
         rating: 3
       },
-    ]
+    ],
+    starRatings: {
+      1 : "⭐", 
+      2 : "⭐⭐", 
+      3 : "⭐⭐⭐", 
+      4 : "⭐⭐⭐⭐", 
+      5 : "⭐⭐⭐⭐⭐", 
+    },
   },
   getters: {},
   mutations: {},
