@@ -59,6 +59,15 @@ h1 {
   font-size: 64px;
 }
 
+h2 {
+  font-size: 48px; 
+}
+
+h4 {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
 p, span {
   font-size: 16px;
   line-height: 24px;
