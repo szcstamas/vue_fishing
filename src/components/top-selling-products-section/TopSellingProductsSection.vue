@@ -38,9 +38,7 @@ export default {
 
   computed: {
     ...mapState(["topSellingProducts", "starRatings"]),
-  },
-
-  methods: {},
+  }
 };
 </script>
 
@@ -58,19 +56,14 @@ export default {
     }
   }
 
-  &__item-container {
-    @include flexColumnOnMobile(flex-start, stretch, 8rem, column, 1100px);
-    flex-wrap: wrap;
-
-    @media screen and (max-width: 1500px) {
-      gap: 3rem;
-    }
+  &__item-container { 
+    @include gridResponsiveColumnLayout();
+    gap: 4rem;
   }
 
   &__item-box {
     @include flexColumn(space-between, stretch);
-    flex: 1;
-    min-width: 300px;
+    height: 100%;
 
     &__image-container {
       width: 100%;
