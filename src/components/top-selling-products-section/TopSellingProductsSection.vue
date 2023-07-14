@@ -54,7 +54,7 @@ export default {
 .top-selling-products-section {
   background-color: $secondary_color_unsaturated_light_gray;
   padding-bottom: 4rem;
-  border-top: 15px solid $primary_color_dark_blue;
+  border-block: 15px solid $primary_color_dark_blue;
 
   &__container {
     max-width: 1780px;
@@ -65,43 +65,44 @@ export default {
       padding-top: 6rem;
       color: $primary_color_dark_blue;
     }
+  }
 
-    .top-selling-products-section__title-image-container {
-      margin-block: 3rem;
-      position: relative;
+  &__title-image-container {
+    margin-block: 3rem;
+    position: relative;
 
-      &::after,
-      &::before {
-        content: "";
-        position: absolute;
-        height: 2px;
-        width: calc(50% - 70px);
-        top: 50%;
-        background-color: $secondary_color_light_gray;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: calc(50% - 70px);
+      top: 50%;
+      background-color: $secondary_color_light_gray;
+    }
+
+    &::before {
+      right: 0;
+    }
+  }
+
+  &__title-image {
+    width: 70px;
+    display: block;
+    margin: auto;
+    animation: swinging 3s ease-in-out infinite;
+    transform-origin: top;
+    opacity: 0.5;
+
+    @keyframes swinging {
+      0% {
+        rotate: -40deg;
       }
-
-      &::before {
-        right: 0;
+      50% {
+        rotate: 40deg;
       }
-
-      .top-selling-products-section__title-image {
-        width: 70px;
-        display: block;
-        margin: auto;
-        animation: swinging 3s ease-in-out infinite;
-        transform-origin: top;
-
-        @keyframes swinging {
-          0% {
-            rotate: -40deg;
-          }
-          50% {
-            rotate: 40deg;
-          }
-          100% {
-            rotate: -40deg;
-          }
-        }
+      100% {
+        rotate: -40deg;
       }
     }
   }
