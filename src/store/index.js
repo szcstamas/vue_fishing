@@ -39,25 +39,25 @@ export default createStore({
     ],
     topSellingProducts: [
       {
-        bannerImage: require("@/assets/images/site-header__backgroundImages/01.jpg"),
-        headline: "Carp Dinasty XXL 420",
+        bannerImage: require("@/assets/images/top-products__images/rod.jpg"),
+        headline: "Delphin Dinasty XXL 420",
         productPrice: "52.55 €",
         rating: 4
       },
       {
-        bannerImage: require("@/assets/images/site-header__backgroundImages/02.png"),
+        bannerImage: require("@/assets/images/top-products__images/reels.jpg"),
         headline: "Big River 5000 5:2:2",
         productPrice: "60.99 €",
         rating: 4
       },
       {
-        bannerImage: require("@/assets/images/site-header__backgroundImages/03.jpg"),
+        bannerImage: require("@/assets/images/top-products__images/vest.jpg"),
         headline: "FOX Camo Vest - waterproof",
         productPrice: "30.00 €",
         rating: 5
       },
       {
-        bannerImage: require("@/assets/images/site-header__backgroundImages/04.jpg"),
+        bannerImage: require("@/assets/images/top-products__images/sbs-pellet.png"),
         headline: "SBS Pellet mix",
         productPrice: "8.45 €",
         rating: 3

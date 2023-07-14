@@ -111,13 +111,14 @@ form {
 }
 
 *::-webkit-scrollbar {
-  width: 25px;
+  width: 20px;
   background-color: $primary_color_dark_blue;
 }
 
 *::-webkit-scrollbar-thumb {
   border: 6px solid $primary_color_dark_blue;
   background-color: $primary_color_white;
+  border-radius: 10px;
 }
 </style>
 

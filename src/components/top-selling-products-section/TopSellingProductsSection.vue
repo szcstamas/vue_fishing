@@ -54,6 +54,7 @@ export default {
 .top-selling-products-section {
   background-color: $secondary_color_unsaturated_light_gray;
   padding-bottom: 4rem;
+  border-top: 15px solid $primary_color_dark_blue;
 
   &__container {
     max-width: 1780px;
@@ -91,9 +92,15 @@ export default {
         transform-origin: top;
 
         @keyframes swinging {
-          0% { rotate: -40deg; }
-          50% { rotate: 40deg; }
-          100% { rotate: -40deg; }
+          0% {
+            rotate: -40deg;
+          }
+          50% {
+            rotate: 40deg;
+          }
+          100% {
+            rotate: -40deg;
+          }
         }
       }
     }
@@ -124,7 +131,7 @@ export default {
 
     &:hover {
       transform: translateY(-5px);
-      animation: change 0.5s linear;
+      animation: changeOpacity 0.5s linear;
     }
 
     &::after {
@@ -135,13 +142,14 @@ export default {
       background-color: $primary_color_white;
       transition: transform 0.25s ease-in-out;
       transform: skew(-45deg) translate(-650%, 0%);
+      opacity: 0.25;
     }
 
     &:hover:after {
-      transform: skew(-45deg) translate(1580%, 0%);
+      animation: changePosition 0.25s linear;
     }
 
-    @keyframes change {
+    @keyframes changeOpacity {
       0% {
         opacity: 1;
       }
@@ -150,6 +158,15 @@ export default {
       }
       100% {
         opacity: 1;
+      }
+    }
+
+    @keyframes changePosition {
+      from {
+        transform: skew(-45deg) translate(-650%, 0%);
+      }
+      to {
+        transform: skew(-45deg) translate(1580%, 0%);
       }
     }
 
