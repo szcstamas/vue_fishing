@@ -2,8 +2,16 @@
   <section class="top-selling-products-section">
     <div class="container top-selling-products-section__container">
       <h2>Featured collection</h2>
+      <div class="top-selling-products-section__title-image-container">
+        <img
+          class="top-selling-products-section__title-image"
+          src="@/assets/images/title-hook.png"
+          alt="Fishing hook decoration"
+        />
+      </div>
       <div class="top-selling-products-section__item-container">
-        <div
+        <router-link
+          to="/feeders-and-boilies"
           v-for="(product, index) in topSellingProducts"
           class="top-selling-products-section__item-box"
         >
@@ -21,7 +29,7 @@
             {{ product.productPrice }}
           </div>
           <dark-gray-button :buttonText="'Add to cart'"></dark-gray-button>
-        </div>
+        </router-link>
       </div>
     </div>
   </section>
@@ -38,12 +46,13 @@ export default {
 
   computed: {
     ...mapState(["topSellingProducts", "starRatings"]),
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .top-selling-products-section {
+  background-color: $secondary_color_unsaturated_light_gray;
   padding-bottom: 4rem;
 
   &__container {
@@ -52,11 +61,45 @@ export default {
     h2 {
       text-transform: uppercase;
       text-align: center;
-      padding-block: 6rem;
+      padding-top: 6rem;
+      color: $primary_color_dark_blue;
+    }
+
+    .top-selling-products-section__title-image-container {
+      margin-block: 3rem;
+      position: relative;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: calc(50% - 70px);
+        top: 50%;
+        background-color: $secondary_color_light_gray;
+      }
+
+      &::before {
+        right: 0;
+      }
+
+      .top-selling-products-section__title-image {
+        width: 70px;
+        display: block;
+        margin: auto;
+        animation: swinging 3s ease-in-out infinite;
+        transform-origin: top;
+
+        @keyframes swinging {
+          0% { rotate: -40deg; }
+          50% { rotate: 40deg; }
+          100% { rotate: -40deg; }
+        }
+      }
     }
   }
 
-  &__item-container { 
+  &__item-container {
     @include gridResponsiveColumnLayout();
     gap: 4rem;
   }
@@ -64,6 +107,51 @@ export default {
   &__item-box {
     @include flexColumn(space-between, stretch);
     height: 100%;
+    background-color: $primary_color_white;
+    padding: 1rem;
+    box-shadow: 0px 40px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease-in;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+
+    &:nth-child(2n) {
+      button {
+        background-color: $primary_color_dark_blue;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      animation: change 0.5s linear;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 100%;
+      background-color: $primary_color_white;
+      transition: transform 0.25s ease-in-out;
+      transform: skew(-45deg) translate(-650%, 0%);
+    }
+
+    &:hover:after {
+      transform: skew(-45deg) translate(1580%, 0%);
+    }
+
+    @keyframes change {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
     &__image-container {
       width: 100%;
@@ -75,6 +163,10 @@ export default {
         object-fit: cover;
       }
     }
+  }
+
+  &__price-container {
+    font-size: 20px;
   }
 }
 </style>
