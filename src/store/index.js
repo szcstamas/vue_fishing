@@ -31,11 +31,11 @@ export default createStore({
       "Catches",
     ],
     homepageGridSectionBackgroundImages: [
-      require("@/assets/images/site-header__backgroundImages/01.jpg"),
-      require("@/assets/images/site-header__backgroundImages/02.png"),
-      require("@/assets/images/site-header__backgroundImages/03.jpg"),
-      require("@/assets/images/site-header__backgroundImages/04.jpg"),
-      require("@/assets/images/site-header__backgroundImages/05.jpg"),
+      require("@/assets/images/homepage-grid-section__images/clothes.jpg"),
+      require("@/assets/images/homepage-grid-section__images/rods-and-reels.jpg"),
+      require("@/assets/images/homepage-grid-section__images/lures.jpg"),
+      require("@/assets/images/homepage-grid-section__images/community.jpg"),
+      require("@/assets/images/homepage-grid-section__images/catches.jpg"),
     ],
     topSellingProducts: [
       {

@@ -2,7 +2,8 @@
   <section class="grid-section">
     <div class="container grid-section__container">
       <div class="grid-section__grid-container">
-        <div
+        <router-link
+          to="/feeders-and-boilies"
           v-for="(headline, index) in homepageGridSectionHeadlines"
           :style="{
             background: `url('${homepageGridSectionBackgroundImages[index]}') no-repeat center right`,
@@ -10,16 +11,18 @@
           }"
           class="grid-section__grid-box"
         >
-          <h4>{{ headline }}</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
-            consequatur! Aliquam amet cumque, autem earum pariatur error totam
-            cum itaque?
-          </p>
-          <router-link to="/feeders-and-boilies">
-            <white-button isWidthAuto :buttonText="'Visit Subpage'" />
-          </router-link>
-        </div>
+          <div class="grid-section__grid-box__text-container">
+            <h4>{{ headline }}</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+              consequatur! Aliquam amet cumque, autem earum pariatur error totam
+              cum itaque?
+            </p>
+            <router-link to="/feeders-and-boilies">
+              <white-button isWidthAuto :buttonText="'Visit Subpage'" />
+            </router-link>
+          </div>
+        </router-link>
       </div>
     </div>
   </section>
@@ -65,16 +68,42 @@ export default {
   }
 
   &__grid-box {
-    @include flexColumn(center, flex-start);
+    text-decoration: none;
+    color: inherit;
 
-    padding: 2rem 3rem;
-    h4,
-    p {
-      color: $primary_color_white;
-    }
+    &__text-container {
+      @include flexColumn(center, flex-start);
+      padding: 2rem 3rem;
+      transition: all 0.5s ease-in-out;
+      height: 100%;
+      position: relative;
+      isolation: isolate;
 
-    p {
-      width: 70%;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 75%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.45);
+        z-index: -1;
+        transition: all .4s ease-in-out;
+      }
+
+      &:hover:after {
+        background-color: rgba(0, 0, 0, .55);
+        width: 82%;
+      }
+
+      h4,
+      p {
+        color: $primary_color_white;
+      }
+
+      p {
+        width: 75%;
+      }
     }
 
     &:nth-child(2) {
