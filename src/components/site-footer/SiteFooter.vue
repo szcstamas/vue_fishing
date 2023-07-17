@@ -25,7 +25,9 @@
         </div>
       </div>
     </div>
-    <div class="site-footer__bottom">Szűcs Tamás &copy; 2023</div>
+    <div class="site-footer__bottom">
+      <p>Szűcs Tamás &copy; 2023</p>
+    </div>
   </footer>
 </template>
 
@@ -65,13 +67,7 @@ export default {
   }
 
   &__top-line {
-    @include flexColumnOnMobile(
-      space-between,
-      stretch,
-      1rem,
-      column,
-      1350px
-    );
+    @include flexColumnOnMobile(space-between, stretch, 1rem, column, 1350px);
     padding-block: 2.5rem;
 
     &__link-container {
