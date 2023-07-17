@@ -1,5 +1,5 @@
 <template>
-  <section class="top-selling-products-section">
+  <section id="top-products-section" class="top-selling-products-section">
     <div class="container top-selling-products-section__container">
       <h2>Top products</h2>
       <div class="top-selling-products-section__title-image-container">

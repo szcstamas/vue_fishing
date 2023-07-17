@@ -1,14 +1,17 @@
 <template>
   <site-header />
   <router-view />
+  <site-footer />
 </template>
 
 <script>
 import SiteHeader from "./components/site-header/SiteHeader.vue";
+import SiteFooter from "./components/site-footer/SiteFooter.vue";
 
 export default {
   components: {
     SiteHeader,
+    SiteFooter,
   },
 };
 </script>
@@ -18,7 +21,7 @@ export default {
 /* Roboto Slab for headlines */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700;900&display=swap");
 /* Ubuntu for main texts */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,600;0,700;0,1000;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,600;0,700;0,1000;1,400;1,700&display=swap");
 
 * {
   margin: 0;
@@ -34,6 +37,19 @@ body {
 
     .container {
       max-width: 1200px;
+      width: 100%;
+      margin: auto;
+
+      &__flex {
+        @include flexColumn(center, center, 0.5rem);
+      }
+    }
+  }
+
+  footer {
+
+    .container {
+      max-width: 1780px;
       width: 100%;
       margin: auto;
 
@@ -60,7 +76,7 @@ h1 {
 }
 
 h2 {
-  font-size: 48px; 
+  font-size: 48px;
 }
 
 h4 {
@@ -68,15 +84,21 @@ h4 {
   text-transform: uppercase;
 }
 
-p, span {
+p,
+span {
   font-size: 16px;
   line-height: 24px;
+}
+
+li {
+  list-style: none;
 }
 
 form {
   input[type="text"],
   input[type="number"],
   input[type="submit"],
+  input[type="email"],
   input[type="password"] {
     font-family: inherit;
     font-size: 16px;
