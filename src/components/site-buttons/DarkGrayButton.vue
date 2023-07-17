@@ -1,5 +1,5 @@
 <template>
-  <button :class="{ rounded: isRounded, 'width-auto': isWidthAuto }" @click="$emit('buttonEvent')">{{ buttonText }}</button>
+  <button :class="{ rounded: isRounded, 'width-auto': isWidthAuto, 'small-rounded': isSmallRounded }" @click="$emit('buttonEvent')">{{ buttonText }}</button>
 </template>
 
 <script>
@@ -7,7 +7,8 @@ export default {
   props: {
     buttonText: String,
     isRounded: Boolean,
-    isWidthAuto: Boolean
+    isWidthAuto: Boolean,
+    isSmallRounded: Boolean
   }
 };
 </script>
@@ -29,6 +30,10 @@ button {
 }
 
 .rounded {
+  border-radius: 10px;
+}
+
+.small-rounded {
   border-radius: 4px;
 }
 

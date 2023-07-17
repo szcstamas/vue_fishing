@@ -9,7 +9,7 @@
           itaque?
         </p>
         <router-link to="/about">
-          <white-button isWidthAuto :buttonText="shopMore" />
+          <white-button isRounded isWidthAuto :buttonText="shopMore" />
         </router-link>
       </div>
     </div>
@@ -48,6 +48,7 @@ export default {
     background-color: rgb(0, 0, 0, 0.5);
     backdrop-filter: opacity(50%);
     padding: 2rem;
+    border-radius: 10px;
   }
 }
 </style>

@@ -19,7 +19,7 @@
               cum itaque?
             </p>
             <router-link to="/feeders-and-boilies">
-              <white-button isWidthAuto :buttonText="'Visit Subpage'" />
+              <white-button isRounded isWidthAuto :buttonText="'Visit Subpage'" />
             </router-link>
           </div>
         </router-link>
@@ -70,6 +70,8 @@ export default {
   &__grid-box {
     text-decoration: none;
     color: inherit;
+    border-radius: 10px;
+    overflow: hidden;
 
     &__text-container {
       @include flexColumn(center, flex-start);

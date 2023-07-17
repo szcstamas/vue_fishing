@@ -1,7 +1,7 @@
 <template>
   <section class="top-selling-products-section">
     <div class="container top-selling-products-section__container">
-      <h2>Featured collection</h2>
+      <h2>Top products</h2>
       <div class="top-selling-products-section__title-image-container">
         <img
           class="top-selling-products-section__title-image"
@@ -28,7 +28,7 @@
           <div class="top-selling-products-section__price-container">
             {{ product.productPrice }}
           </div>
-          <dark-gray-button :buttonText="'Add to cart'"></dark-gray-button>
+          <dark-gray-button isSmallRounded :buttonText="'Add to cart'"></dark-gray-button>
         </router-link>
       </div>
     </div>
@@ -123,6 +123,7 @@ export default {
     overflow: hidden;
     text-decoration: none;
     color: inherit;
+    border-radius: 10px;
 
     &:nth-child(2n) {
       button {
