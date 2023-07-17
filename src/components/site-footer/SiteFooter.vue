@@ -109,9 +109,11 @@ export default {
     &__link-box {
       @include flexColumn(flex-start, stretch);
       min-width: 300px;
-      background-color: $primary_color_white;
+      background-color: $primary_color_transparent_white;
+      border: 4px solid $primary_color_white;
       padding: 2rem;
       border-radius: 10px;
+      backdrop-filter: blur(5px);
       box-shadow: 0px 40px 20px rgba(0, 0, 0, 0.1);
 
       @media screen and (max-width: 1350px) {
