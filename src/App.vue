@@ -18,7 +18,7 @@ export default {
 /* Roboto Slab for headlines */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700;900&display=swap");
 /* Ubuntu for main texts */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,600;0,700;0,1000;1,400;1,700&display=swap');
 
 * {
   margin: 0;
@@ -27,7 +27,7 @@ export default {
 }
 
 body {
-  font-family: "Ubuntu", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "DM Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   section {
     padding-inline: 2rem;
