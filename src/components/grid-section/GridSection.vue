@@ -12,7 +12,7 @@
           }"
           class="grid-section__grid-box"
         >
-          <div class="grid-section__grid-box__text-container">
+          <div class="grid-section__grid-box__text-container">  
             <h4>{{ headline }}</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,

@@ -14,7 +14,14 @@
       </div>
     </div>
     <div class="title-section__branding-container">
-      <div v-for="{ brandLink, brandName } in brandLogoImages" :key="`Key of ${brandName} company`" class="title-section__branding-logo-box">
+      <div class="title-section__branding-container__headline">
+        <h4>Our partners</h4>
+      </div>
+      <div
+        v-for="{ brandLink, brandName } in brandLogoImages"
+        :key="`Key of ${brandName} company`"
+        class="title-section__branding-logo-box"
+      >
         <img :src="brandLink" :alt="`Image of ${brandName} company`" />
       </div>
     </div>
@@ -75,7 +82,8 @@ export default {
   }
 
   &__branding-container {
-    @include flexColumnOnMobile(space-between, center);
+    @include flexColumnOnMobile(space-between, center, 1rem, column, 850px);
+    flex-wrap: wrap;
 
     background-color: $primary_color_transparent_black;
     backdrop-filter: blur(2px);
@@ -85,6 +93,55 @@ export default {
     width: 100%;
     bottom: 0;
     left: 0;
+    border-top: 3px solid $primary_color_white;
+
+    @media screen and (max-width: 1050px) {
+      @include flexColumnOnMobile(center, center);
+    }
+
+    @media screen and (max-width: 852px) {
+      position: static;
+    }
+
+    @media screen and (max-width: 722px) {
+      padding-top: 6rem;
+    }
+
+    &__headline {
+      position: absolute;
+      padding: 2rem;
+      background-color: $primary_color_dark_blue_lowest;
+      backdrop-filter: blur(5000px);
+      border: 3px solid $primary_color_white;
+      border-radius: 10px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -150%);
+      text-align: center;
+
+      @media screen and (max-width: 1050px) {
+        transform: translate(-50%, -225%);
+      }
+
+      @media screen and (max-width: 850px) {
+        transform: translate(-50%, -575%);
+      }
+
+      @media screen and (max-width: 722px) {
+        width: 80%;
+        transform: translate(-50%, -610%);
+      }
+
+      @media screen and (max-width: 482px) {
+        width: 80%;
+        transform: translate(-50%, -475%);
+      }
+    }
+  }
+
+  &__branding-logo-box {
+    place-self: center;
+    width: clamp(125px, 125px, 125px);
 
     img {
       max-height: 125px;
