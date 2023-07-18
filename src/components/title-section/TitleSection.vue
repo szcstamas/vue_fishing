@@ -54,15 +54,10 @@ export default {
     increasedBackgroundImageIndex(index) {
       setTimeout(() => {
         setTimeout(() => {
-          if (
-            this.backgroundImageIndex <=
-            (this.titleSectionBackgroundImages.length - 2)
-          ) {
-            this.backgroundImageIndex += 1;
-            console.log(this.backgroundImageIndex);
-          } else {
-            this.backgroundImageIndex = 0;
-          }
+          this.backgroundImageIndex <=
+          this.titleSectionBackgroundImages.length - 2
+            ? (this.backgroundImageIndex += 1)
+            : (this.backgroundImageIndex = 0);
         }, 3000);
       }, 3000);
     },
