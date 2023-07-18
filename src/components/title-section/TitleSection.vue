@@ -1,8 +1,15 @@
 <template>
-  <section class="title-section">
+  <section
+    class="title-section"
+    :style="{
+      background: `url('${titleSectionBackgroundImages[backgroundImageIndex]}') no-repeat center top`,
+      backgroundSize: 'cover',
+    }"
+  >
     <div class="container title-section__container">
       <div class="title-section__right-column">
         <h1>BERKLEY FISHING</h1>
+        {{ increasedBackgroundImageIndex(backgroundImageIndex) }}
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
           consequatur! Aliquam amet cumque, autem earum pariatur error totam cum
@@ -37,18 +44,34 @@ export default {
   data() {
     return {
       shopMore: "Shop more",
+      backgroundImageIndex: 0,
     };
   },
   computed: {
-    ...mapState(["brandLogoImages"]),
+    ...mapState(["brandLogoImages", "titleSectionBackgroundImages"]),
+  },
+  methods: {
+    increasedBackgroundImageIndex(index) {
+      setTimeout(() => {
+        setTimeout(() => {
+          if (
+            this.backgroundImageIndex <=
+            (this.titleSectionBackgroundImages.length - 2)
+          ) {
+            this.backgroundImageIndex += 1;
+            console.log(this.backgroundImageIndex);
+          } else {
+            this.backgroundImageIndex = 0;
+          }
+        }, 3000);
+      }, 3000);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .title-section {
-  background: url("@/assets/images/landing-page__hero.jpg") no-repeat center top;
-  background-size: cover;
   position: relative;
 
   &__container {

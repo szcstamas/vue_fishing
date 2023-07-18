@@ -16,6 +16,13 @@ export default createStore({
       "Contact",
       "About",
     ],
+    titleSectionBackgroundImages: [
+      require("@/assets/images/title-section__backgroundImages/landing-page__hero1.jpg"),
+      require("@/assets/images/title-section__backgroundImages/landing-page__hero2.jpg"),
+      require("@/assets/images/title-section__backgroundImages/landing-page__hero3.jpg"),
+      require("@/assets/images/title-section__backgroundImages/landing-page__hero4.jpg"),
+      require("@/assets/images/title-section__backgroundImages/landing-page__hero5.jpg"),
+    ],
     brandLogoImages: [
       {
         brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/dpd.png"),
