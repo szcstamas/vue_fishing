@@ -20,7 +20,11 @@
               cum itaque?
             </p>
             <router-link to="/feeders-and-boilies">
-              <white-button isRounded isWidthAuto :buttonText="'Visit Subpage'" />
+              <white-button
+                isRounded
+                isWidthAuto
+                :buttonText="'Visit Subpage'"
+              />
             </router-link>
           </div>
         </router-link>
@@ -82,21 +86,40 @@ export default {
       position: relative;
       isolation: isolate;
 
-      &::after {
-        content: '';
+      &::after,
+      &::before {
+        content: "";
         position: absolute;
+        transition: all 0.25s ease-in-out;
+      }
+
+      &::after {
         width: 75%;
         height: 100%;
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.45);
         z-index: -1;
-        transition: all .4s ease-in-out;
+      }
+
+      &::before {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $primary_color_white;
+        right: 0;
+        bottom: 0;
+        transform: translate(200%, 200%);
+        transition-delay: .25s;
       }
 
       &:hover:after {
-        background-color: rgba(0, 0, 0, .55);
-        width: 82%;
+        background-color: rgba(0, 0, 0, 0.55);
+        width: 100%;
+      }
+
+      &:hover:before {
+        transform: translate(-200%, -200%);
       }
 
       h4,
