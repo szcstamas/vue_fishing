@@ -133,7 +133,6 @@ export default {
       }
 
       @media screen and (max-width: 482px) {
-        width: 80%;
         transform: translate(-50%, -475%);
       }
     }
