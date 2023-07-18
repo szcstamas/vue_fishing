@@ -38,6 +38,7 @@
     <nav v-if="showMobileMenu" class="site-header__bottom-navigation">
       <router-link
         v-for="(link, index) in headerLinkHrefs"
+        :key="`Links of ${headerLinkTexts[index]} in site-header component`"
         :style="{
           background: `url('${headerLinkActiveBackgrounds[index]}') no-repeat center right`,
           backgroundSize: '70%',

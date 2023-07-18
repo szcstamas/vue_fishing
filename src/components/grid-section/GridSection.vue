@@ -5,6 +5,7 @@
         <router-link
           to="/feeders-and-boilies"
           v-for="(headline, index) in homepageGridSectionHeadlines"
+          :key="`Link box of ${headline} in home page grid-section`"
           :style="{
             background: `url('${homepageGridSectionBackgroundImages[index]}') no-repeat center right`,
             backgroundSize: 'cover',

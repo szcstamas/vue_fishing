@@ -6,9 +6,10 @@
           <div
             class="site-footer__top-line__link-box"
             v-for="{ footerTabTitle, footerTabLinks } in footerTabs"
+            :key="`Link box of ${footerTabTitle} in site-footer`"
           >
             <h4>{{ footerTabTitle }}</h4>
-            <li v-for="{ linkText, linkTitle } in footerTabLinks">
+            <li v-for="{ linkText, linkTitle } in footerTabLinks" :key="`Link of ${linkTitle} in site-footer`">
               <router-link :to="linkText">
                 {{ linkTitle }}
               </router-link>

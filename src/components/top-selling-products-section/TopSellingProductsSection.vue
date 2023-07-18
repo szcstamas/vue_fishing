@@ -12,21 +12,22 @@
       <div class="top-selling-products-section__item-container">
         <router-link
           to="/feeders-and-boilies"
-          v-for="(product, index) in topSellingProducts"
+          v-for="({ bannerImage, headline, productPrice, rating }, index) in topSellingProducts"
+          :key="`Link of ${headline} in top products section on homepage`"
           class="top-selling-products-section__item-box"
         >
           <div class="top-selling-products-section__item-box__image-container">
             <img
-              :src="product.bannerImage"
-              :alt="'Picture of ' + product.headline"
+              :src="bannerImage"
+              :alt="'Picture of ' + headline"
             />
           </div>
-          <h4>{{ product.headline }}</h4>
+          <h4>{{ headline }}</h4>
           <div class="top-selling-products-section__rating-container">
-            {{ starRatings[product.rating] }}
+            {{ starRatings[rating] }}
           </div>
           <div class="top-selling-products-section__price-container">
-            {{ product.productPrice }}
+            {{ productPrice }}
           </div>
           <dark-gray-button isSmallRounded :buttonText="'Add to cart'"></dark-gray-button>
         </router-link>
