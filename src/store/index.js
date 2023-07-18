@@ -16,6 +16,36 @@ export default createStore({
       "Contact",
       "About",
     ],
+    brandLogoImages: [
+      {
+        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/dpd.png"),
+        brandName: "DPD"
+      },
+      {
+        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/expressone.png"),
+        brandName: "ExpressOne"
+      },
+      {
+        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/fox.png"),
+        brandName: "Fox Fishing"
+      },
+      {
+        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/greys.png"),
+        brandName: "Greys"
+      },
+      {
+        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/nash.png"),
+        brandName: "Nash Fishing"
+      },
+      {
+        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/nextlevel.png"),
+        brandName: "Next Level"
+      },
+      {
+        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/oceanfish.png"),
+        brandName: "Ocean Fish"
+      },
+    ],
     headerLinkActiveBackgrounds: [
       require("@/assets/images/site-header__backgroundImages/01.jpg"),
       require("@/assets/images/site-header__backgroundImages/02.png"),
