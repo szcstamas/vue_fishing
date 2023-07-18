@@ -49,6 +49,13 @@ export default {
     backdrop-filter: blur(3px);
     padding: 2rem;
     border-radius: 10px;
+    animation: blurChange 2s ease-in-out infinite;
+    
+    @keyframes blurChange {
+      0% { backdrop-filter: blur(3px); }
+      50% { backdrop-filter: blur(0px); }
+      100% { backdrop-filter: blur(3px); }
+    }
   }
 }
 </style>
