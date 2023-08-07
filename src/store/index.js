@@ -172,6 +172,44 @@ export default createStore({
         ],
       },
     ],
+    feedersAndBoiliesGridSections: [
+      {
+        title: "Boilie rods",
+        background: require("@/assets/images/subpage_grid__images/boilierod.jpg"),
+        url: "/",
+        content: "Thanks to the quality carp fishing rods we manufacture and distribute, catching even the biggest catch is not a problem!"
+      },
+      {
+        title: "Feeder rods",
+        background: require("@/assets/images/subpage_grid__images/feederrod.jpg"),
+        url: "/",
+        content: "Flexible, reliable, lightweight, medium, and heavy feeder rods are an essential part of quality fishing!"
+      },
+      {
+        title: "Reels",
+        background: require("@/assets/images/subpage_grid__images/reels.jpg"),
+        url: "/",
+        content: "When it comes to fishing reels, besides the operation of the bearings, the composition of the structure, line management, and brake adjustment, quality is also not the last on the list!"
+      },
+      {
+        title: "Baits & feeds",
+        background: require("@/assets/images/subpage_grid__images/baitsandfeeds.jpg"),
+        url: "/",
+        content: "The feed and bait products manufactured and distributed by our company are market leaders to this day!"
+      },
+      {
+        title: "Clothes",
+        background: require("@/assets/images/subpage_grid__images/clothes.jpg"),
+        url: "/",
+        content: "Whether it's about heat or freezing cold, a hallmark of a good fisherman is always high-quality and practical attire, which is an essential part of fishing."
+      },
+      {
+        title: "Accessories",
+        background: require("@/assets/images/subpage_grid__images/accessories.jpg"),
+        url: "/",
+        content: "Do you need something else? Not a problem at all, you will always find what you desire with us!"
+      }
+    ]
   },
   getters: {},
   mutations: {},

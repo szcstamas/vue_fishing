@@ -1,12 +1,14 @@
 <template>
   <subpage-hero-section v-bind="feedersAndBoiliesHeroContent" />
+  <two-column-grid-section />
 </template>
 
 <script>
 import SubpageHeroSection from "@/components/feeders-and-boilies/hero-section/SubpageHeroSection.vue";
+import TwoColumnGridSection from '@/components/feeders-and-boilies/two-columns-grid-section/TwoColumnGridSection.vue';
 
 export default {
-  components: { SubpageHeroSection },
+  components: { SubpageHeroSection, TwoColumnGridSection },
   data() {
     return {
       feedersAndBoiliesHeroContent: {
