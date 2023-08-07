@@ -11,7 +11,7 @@ export default {
     return {
       feedersAndBoiliesHeroContent: {
         url: require("@/assets/images/subpage_hero-section-images/feeders-and-boilies_hero-image.jpeg"),
-        headline: "Feeders and boilies",
+        headline: "Feeders & boilies",
         subline:
           "Our beloved products are always available in a wide range on our website.",
         span: "Hurry up!",
