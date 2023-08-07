@@ -1,6 +1,7 @@
 <template>
   <section
     class="title-section"
+    :class="{ 'fade-in': isFadeEnabled }"
     :style="{
       background: `url('${titleSectionBackgroundImages[backgroundImageIndex]}') no-repeat center top`,
       backgroundSize: 'cover',
@@ -32,6 +33,7 @@
         <img :src="brandLink" :alt="`Image of ${brandName} company`" />
       </div>
     </div>
+    <div class="title-section__blurred-background"></div>
   </section>
 </template>
 
@@ -45,6 +47,7 @@ export default {
     return {
       shopMore: "Shop more",
       backgroundImageIndex: 0,
+      isFadeEnabled: false,
     };
   },
   computed: {
@@ -68,6 +71,7 @@ export default {
 <style lang="scss" scoped>
 .title-section {
   position: relative;
+  isolation: isolate;
 
   &__container {
     padding-block: 15rem 30rem;
@@ -162,6 +166,25 @@ export default {
 
     img {
       max-height: 125px;
+    }
+  }
+
+  &__blurred-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    backdrop-filter: blur(20px);
+    background: $primary_color_transparent_white;
+    animation: fade-in 6s ease-in-out infinite;
+
+    @keyframes fade-in {
+      0% { opacity: 1; }
+      10% { opacity: 0; }
+      90% { opacity: 0; }
+      100% { opacity: 1; }
     }
   }
 }
