@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 .site-footer {
-  background: url("https://www.fishermanholidays.com/images-waters/etang-carpanium/swims/_1600x980_crop_center-center_80_line/65160/Carpanium-Carp-Fishing-France_9177.jpeg");
+  background: url("@/assets/images/footer_images/footer_background_image.jpeg");
   background-size: cover;
   background-position: center;
   position: relative;

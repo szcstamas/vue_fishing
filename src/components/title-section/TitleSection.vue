@@ -84,7 +84,7 @@ export default {
     max-width: 600px;
     margin-left: auto;
     color: $primary_color_white;
-    background-color: rgb(0, 0, 0, 0.45);
+    background-color: $primary_color_transparent_black;
     backdrop-filter: blur(3px);
     padding: 2rem;
     border-radius: 10px;
