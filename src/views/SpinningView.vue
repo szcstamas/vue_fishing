@@ -1,5 +1,5 @@
 <template>
-  <subpage-hero-section v-bind="feedersAndBoiliesHeroContent" />
+  <subpage-hero-section v-bind="spinningHeroContent" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   components: { SubpageHeroSection },
   data() {
     return {
-      feedersAndBoiliesHeroContent: {
+      spinningHeroContent: {
         url: require("@/assets/images/subpage_hero-section-images/spinning_hero-image.jpg"),
         headline: "Spinning",
         subline:
