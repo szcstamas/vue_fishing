@@ -10,7 +10,7 @@
             url,
             content,
           } in feedersAndBoiliesGridSections"
-          :key="`Link box of ${headline} in home page grid-section`"
+          :key="`Link box of ${title} in home page grid-section`"
           :style="{
             background: `url('${background}') no-repeat center center`,
             backgroundSize: 'cover',
