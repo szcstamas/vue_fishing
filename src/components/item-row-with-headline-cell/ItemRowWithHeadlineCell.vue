@@ -79,6 +79,7 @@ export default {
 
 .item-row-with-headline-cell {
   @include flexColumnOnMobile(center, center);
+  flex-wrap: wrap;
 
   .white-background {
     background-color: $primary_color_white;
@@ -92,7 +93,11 @@ export default {
     border-radius: 10px;
     aspect-ratio: 1/1;
     padding: 2rem;
-    flex: 1;
+    flex: 1 1 200px;
+
+    @media screen and (max-width: 560px) {
+      flex: 1;
+    }
   }
 
   &__headline-cell {
@@ -135,7 +140,11 @@ export default {
       bottom: 0;
       position: absolute;
       transform: translateY(100%);
-      transition: all .25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+
+      @media screen and (max-width: 900px) {
+        transform: translateY(0);
+      }
     }
 
     img {

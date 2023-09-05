@@ -1,5 +1,6 @@
 <template>
   <section class="product-row">
+    <div class="product-row__spacer"></div>
     <div class="container product-row__container">
       <item-row-with-headline-cell
         :textOfHeadline="clothesTextOfHeadline"
@@ -54,9 +55,25 @@ export default {
 <style lang="scss" scoped>
 .product-row {
   padding-block: 2rem;
+  position: relative;
+  isolation: isolate;
+
+  &__spacer {
+    position: absolute;
+    top: 49%;
+    left: 0;
+    height: 1rem;
+    background-color: $secondary_color_unsaturated_light_gray;
+    width: 100%;
+    z-index: -1;
+
+    @media screen and (max-width:560px) {
+      top: 50%;
+    }
+  }
 
   &__container {
-    @include flexColumn(center, center, 2rem);
+    @include flexColumn(center, center, 4rem);
   }
 }
 </style>
