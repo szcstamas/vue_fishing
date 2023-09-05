@@ -3,13 +3,13 @@
     <div class="product-row__spacer"></div>
     <div class="container product-row__container">
       <item-row-with-headline-cell
-        :textOfHeadline="clothesTextOfHeadline"
-        :itemArray="bestClothes"
+        :textOfHeadline="headlineOfFirstRow"
+        :itemArray="arrayOfFirstRow"
         isWhiteBackgroundEnabled
       />
       <item-row-with-headline-cell
-        :textOfHeadline="brandingsTextOfHeadline"
-        :itemArray="changedArrayOfBrandLogoImages"
+        :textOfHeadline="headlineOfSecondRow"
+        :itemArray="arrayOfSecondRow"
         isBlueBackgroundEnabled
         isReversed
         isBlankPage
@@ -20,34 +20,30 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import ItemRowWithHeadlineCell from "@/components/item-row-with-headline-cell/ItemRowWithHeadlineCell.vue";
 
 export default {
-  data() {
-    return {
-      clothesTextOfHeadline: "Top selling clothes for fishing",
-      brandingsTextOfHeadline: "Most popular brands",
-    };
+  props: {
+    headlineOfFirstRow: {
+      type: String,
+      required: true,
+    },
+    headlineOfSecondRow: {
+      type: String,
+      required: true,
+    },
+    arrayOfFirstRow: {
+      type: Array,
+      required: true,
+    },
+    arrayOfSecondRow: {
+      type: Array,
+      required: true,
+    },
   },
 
   components: {
     ItemRowWithHeadlineCell,
-  },
-
-  computed: {
-    ...mapState(["bestClothes", "brandLogoImages"]),
-
-    changedArrayOfBrandLogoImages() {
-      return this.brandLogoImages
-        .map((el) => ({
-          ...el,
-          itemImageSrc: el.brandImageSrc,
-          itemName: el.brandName,
-          itemLink: el.brandLink,
-        }))
-        .filter((el) => el.type === "fishing");
-    },
   },
 };
 </script>

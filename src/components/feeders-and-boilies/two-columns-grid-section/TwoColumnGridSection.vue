@@ -9,7 +9,7 @@
             background,
             url,
             content,
-          } in feedersAndBoiliesGridSections"
+          } in arrayOfGridSections"
           :key="`Link box of ${title} in home page grid-section`"
           :style="{
             background: `url('${background}') no-repeat center center`,
@@ -30,12 +30,13 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
-  computed: {
-    ...mapState(["feedersAndBoiliesGridSections"]),
-  },
+  props: {
+    arrayOfGridSections: {
+      type: Array,
+      required: true
+    }
+  }
 };
 </script>
 

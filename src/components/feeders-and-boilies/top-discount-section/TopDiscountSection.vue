@@ -2,28 +2,26 @@
   <section class="top-discount-section">
     <h4 class="top-discount-section__heading">Best deals</h4>
     <div class="container top-discount-section__container">
-      <product-carousel :arrayOfProducts="sortedArrayOfBestDiscountedProducts" />
+      <product-carousel
+        :arrayOfProducts="arrayOfDiscountedProducts"
+      />
     </div>
   </section>
 </template>
 
 <script>
-import ProductCarousel from '@/components/carousel/ProductCarousel.vue';
-import { mapState } from "vuex";
+import ProductCarousel from "@/components/carousel/ProductCarousel.vue";
 
 export default {
-  components: {
-    ProductCarousel
+  props: {
+    arrayOfDiscountedProducts: {
+      type: Array,
+      required: true,
+    },
   },
 
-  computed: {
-    ...mapState(["topDiscountProducts"]),
-
-    sortedArrayOfBestDiscountedProducts() {
-      return this.topDiscountProducts.toSorted((a, b) => {
-        return b.rating - a.rating;
-      });
-    },
+  components: {
+    ProductCarousel,
   },
 };
 </script>
