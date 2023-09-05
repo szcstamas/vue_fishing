@@ -1,8 +1,15 @@
 <template>
   <subpage-hero-section v-bind="spinningHeroContent" />
-  <two-column-grid-section />
-  <top-discount-section />
-  <product-row />
+  <two-column-grid-section :arrayOfGridSections="spinningGridSections" />
+  <top-discount-section
+    :arrayOfDiscountedProducts="sortedArrayOfBestDiscountedProducts"
+  />
+  <product-row
+    :headlineOfFirstRow="textOfFirstHeadline"
+    :headlineOfSecondRow="textOfSecondHeadline"
+    :arrayOfFirstRow="spinningClothes"
+    :arrayOfSecondRow="spinningBrandLogoImages"
+  />
   <fishing-expo-section />
 </template>
 
@@ -24,6 +31,8 @@ export default {
   },
   data() {
     return {
+      textOfFirstHeadline: "Most popular clothes",
+      textOfSecondHeadline: "Most popular brands",
       spinningHeroContent: {
         url: require("@/assets/images/subpage_hero-section-images/spinning_hero-image.jpg"),
         headline: "Spinning",
@@ -34,7 +43,29 @@ export default {
   },
 
   computed: {
-    ...mapState(["feedersAndBoiliesGridSections"]),
+    ...mapState([
+      "spinningGridSections",
+      "spinningTopDiscountProducts",
+      "spinningClothes",
+      "brandingLogoImages",
+    ]),
+
+    sortedArrayOfBestDiscountedProducts() {
+      return this.spinningTopDiscountProducts.toSorted((a, b) => {
+        return b.rating - a.rating;
+      });
+    },
+
+    spinningBrandLogoImages() {
+      return this.brandingLogoImages
+        .map((el) => ({
+          ...el,
+          itemImageSrc: el.brandImageSrc,
+          itemName: el.brandName,
+          itemLink: el.brandLink,
+        }))
+        .filter((el) => el.type === "spinning-fishing");
+    },
   },
 };
 </script>

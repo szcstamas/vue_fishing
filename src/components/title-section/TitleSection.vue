@@ -26,7 +26,7 @@
         <h4>Our partners</h4>
       </div>
       <div
-        v-for="{ brandImageSrc, brandName } in brandLogoImages"
+        v-for="{ brandImageSrc, brandName } in brandingLogoImages"
         :key="`Key of ${brandName} company`"
         class="title-section__branding-logo-box"
       >
@@ -51,7 +51,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["brandLogoImages", "titleSectionBackgroundImages"]),
+    ...mapState(["brandingLogoImages", "titleSectionBackgroundImages"]),
   },
   methods: {
     increasedBackgroundImageIndex(index) {

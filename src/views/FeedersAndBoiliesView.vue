@@ -7,10 +7,10 @@
     :arrayOfDiscountedProducts="sortedArrayOfBestDiscountedProducts"
   />
   <product-row
-    :headlineOfFirstRow="'Top selling clothes for fishing'"
-    :headlineOfSecondRow="'Most popular brands'"
-    :arrayOfFirstRow="bestClothes"
-    :arrayOfSecondRow="changedArrayOfBrandLogoImages"
+    :headlineOfFirstRow="textOfFirstHeadline"
+    :headlineOfSecondRow="textOfSecondHeadline"
+    :arrayOfFirstRow="feederAndBoiliesClothes"
+    :arrayOfSecondRow="feederAndBoiliesArrayOfBrandLogoImages"
   />
   <fishing-expo-section />
 </template>
@@ -33,6 +33,8 @@ export default {
   },
   data() {
     return {
+      textOfFirstHeadline: "Most popular clothes",
+      textOfSecondHeadline: "Most popular brands",
       feedersAndBoiliesHeroContent: {
         url: require("@/assets/images/subpage_hero-section-images/feeders-and-boilies_hero-image.jpeg"),
         headline: "Feeders & boilies",
@@ -46,26 +48,26 @@ export default {
   computed: {
     ...mapState([
       "feedersAndBoiliesGridSections",
-      "topDiscountProducts",
-      "bestClothes",
-      "brandLogoImages",
+      "feederAndBoiliesTopDiscountProducts",
+      "feederAndBoiliesClothes",
+      "brandingLogoImages",
     ]),
 
     sortedArrayOfBestDiscountedProducts() {
-      return this.topDiscountProducts.toSorted((a, b) => {
+      return this.feederAndBoiliesTopDiscountProducts.toSorted((a, b) => {
         return b.rating - a.rating;
       });
     },
 
-    changedArrayOfBrandLogoImages() {
-      return this.brandLogoImages
+    feederAndBoiliesArrayOfBrandLogoImages() {
+      return this.brandingLogoImages
         .map((el) => ({
           ...el,
           itemImageSrc: el.brandImageSrc,
           itemName: el.brandName,
           itemLink: el.brandLink,
         }))
-        .filter((el) => el.type === "fishing");
+        .filter((el) => el.type === "feeder-fishing");
     },
   },
 };

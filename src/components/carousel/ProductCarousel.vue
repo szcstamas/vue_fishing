@@ -148,7 +148,7 @@ export default {
 
     &__headline {
       font-size: 48px;
-      line-height: 48px;
+      line-height: 54px;
       font-weight: bold;
       margin-bottom: 3rem;
 
