@@ -40,11 +40,11 @@ export default {
 
     changedArrayOfBrandLogoImages() {
       return this.brandLogoImages
-        .map(({ brandImageSrc, brandLink, brandName, type }) => ({
-          itemImageSrc: brandImageSrc,
-          itemName: brandName,
-          itemLink: brandLink,
-          type,
+        .map((el) => ({
+          ...el,
+          itemImageSrc: el.brandImageSrc,
+          itemName: el.brandName,
+          itemLink: el.brandLink,
         }))
         .filter((el) => el.type === "fishing");
     },
@@ -67,7 +67,7 @@ export default {
     width: 100%;
     z-index: -1;
 
-    @media screen and (max-width:560px) {
+    @media screen and (max-width: 560px) {
       top: 50%;
     }
   }
