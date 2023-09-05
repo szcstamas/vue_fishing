@@ -200,24 +200,28 @@ export default createStore({
         headline: "Frenzee FXT",
         productPrice: 42,
         rating: 3,
+        productLink: "/frenzee-fxt"
       },
       {
         bannerImage: require("@/assets/images/top-products__images/big_river_reel.png"),
         headline: "Big River 6000 3:2:1",
         productPrice: 30,
         rating: 4,
+        productLink: "/big-river-6000"
       },
       {
         bannerImage: require("@/assets/images/top-products__images/fox_vest.png"),
         headline: "FOX Camo West - Natural",
         productPrice: 52.55,
         rating: 5,
+        productLink: "/fox-camo-west"
       },
       {
         bannerImage: require("@/assets/images/top-products__images/sbs-pellet.png"),
         headline: "SBS Pellet mix",
         productPrice: 8.45,
         rating: 5,
+        productLink: "/sbs-pellet-mix"
       },
     ],
     spinningTopDiscountProducts: [
@@ -226,42 +230,49 @@ export default createStore({
         headline: "Slaney Fishing Boots",
         productPrice: 62,
         rating: 4,
+        productLink: "/slaney-fishing-boots"
       },
       {
         bannerImage: require("@/assets/images/top-products__images/rapala_kalon_orange_reel.webp"),
         headline: "Rapala Kalon Reel (Orange)",
         productPrice: 73.99,
         rating: 4,
+        productLink: "/rapala-kalon-reel-orange"
       },
       {
         bannerImage: require("@/assets/images/top-products__images/lil_finz_kids_4_3.webp"),
         headline: "Lil Finz for Kids 4'3",
         productPrice: 65,
         rating: 3,
+        productLink: "/lil-finz-for-kids-43"
       },
       {
         bannerImage: require("@/assets/images/top-products__images/rapala_spd_spin_hook.png"),
         headline: "Rapala SPD Spin Hook (2/0)",
         productPrice: 15.99,
         rating: 4,
+        productLink: "/rapala-spd-spin-hook-20"
       },
       {
         bannerImage: require("@/assets/images/top-products__images/rapala_sunglasses.webp"),
         headline: 'Rapala "Hardcore Pike" Sunglasses',
         productPrice: 26,
         rating: 4,
+        productLink: "/rapala-hardcore-pike-sunglasses"
       },
       {
         bannerImage: require("@/assets/images/top-products__images/uzuki_reel.webp"),
         headline: "Uzuki Reel & Spinning Rod Combination",
         productPrice: 125.99,
         rating: 5,
+        productLink: "/uzuki-reel-and-spinning-rod"
       },
       {
         bannerImage: require("@/assets/images/top-products__images/berkley_spinning_bag.png"),
         headline: "Berkley Spinning Bag (25 L)",
         productPrice: 86.99,
         rating: 5,
+        productLink: "/berkley-spinning-bag"
       },
     ],
     starRatings: {

@@ -3,7 +3,7 @@
     <div
       class="carousel-container__carousel-box"
       v-for="(
-        { headline, productPrice, bannerImage }, index
+        { headline, productPrice, bannerImage, productLink }, index
       ) in arrayOfProducts"
       :style="{ transform: `translateX(${xValue}%)` }"
     >
@@ -21,7 +21,8 @@
           {{ productPrice }} €
         </p>
         <primary-blue-button
-          :buttonText="'Check it out!'"
+          :buttonText="textOfCTA"
+          @button-event="jumpToLink(productLink)"
         ></primary-blue-button>
         <div
           class="carousel-container__arrow-container carousel-container__arrow-container--left"
@@ -82,6 +83,7 @@ export default {
   data() {
     return {
       xValue: 0,
+      textOfCTA: 'Check it out!'
     };
   },
 
@@ -92,6 +94,9 @@ export default {
     decreaseXValue() {
       return (this.xValue -= 100);
     },
+    jumpToLink(url) {
+      this.$router.push({ path: url })
+    }
   },
 };
 </script>
