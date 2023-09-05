@@ -23,6 +23,7 @@
         'white-background': isWhiteBackgroundEnabled,
       }"
     >
+      <h5>{{ itemName }}</h5>
       <img :src="itemImageSrc" :alt="`Item image of ${itemName}`" />
     </a>
     <router-link
@@ -39,6 +40,7 @@
         'white-background': isWhiteBackgroundEnabled,
       }"
     >
+      <h5>{{ itemName }}</h5>
       <img :src="itemImageSrc" :alt="`Item image of ${itemName}`" />
     </router-link>
   </div>
@@ -109,10 +111,31 @@ export default {
   &__content-cell {
     overflow: hidden;
     box-shadow: 0px 40px 20px rgba(0, 0, 0, 0.1);
-    transition: all .25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    position: relative;
 
     &:hover {
-      transform: translateY(-5px) rotate(2deg);
+      transform: translateY(-10px);
+
+      h5 {
+        transform: translateY(0);
+      }
+    }
+
+    h5 {
+      font-size: 20px;
+      line-height: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $primary_color_white;
+      background-color: $primary_color_transparent_black;
+      padding: 2rem;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      transform: translateY(100%);
+      transition: all .25s ease-in-out;
     }
 
     img {
