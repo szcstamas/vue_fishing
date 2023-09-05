@@ -26,11 +26,11 @@
         <h4>Our partners</h4>
       </div>
       <div
-        v-for="{ brandLink, brandName } in brandLogoImages"
+        v-for="{ brandImageSrc, brandName } in brandLogoImages"
         :key="`Key of ${brandName} company`"
         class="title-section__branding-logo-box"
       >
-        <img :src="brandLink" :alt="`Image of ${brandName} company`" />
+        <img :src="brandImageSrc" :alt="`Image of ${brandName} company`" />
       </div>
     </div>
     <div class="title-section__blurred-background"></div>

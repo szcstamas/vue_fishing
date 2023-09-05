@@ -25,32 +25,46 @@ export default createStore({
     ],
     brandLogoImages: [
       {
-        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/dpd.png"),
-        brandName: "DPD"
+        brandImageSrc: require("@/assets/images/title-section__branding-line-logos/white overlays/dpd.png"),
+        brandName: "DPD",
+        brandLink: "https://www.dpd.com",
+        type: "carrier",
       },
       {
-        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/expressone.png"),
-        brandName: "ExpressOne"
+        brandImageSrc: require("@/assets/images/title-section__branding-line-logos/white overlays/expressone.png"),
+        brandName: "ExpressOne",
+        brandLink: "https://expressone.hu/",
+        type: "carrier",
       },
       {
-        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/fox.png"),
-        brandName: "Fox Fishing"
+        brandImageSrc: require("@/assets/images/title-section__branding-line-logos/white overlays/fox.png"),
+        brandName: "Fox Fishing",
+        brandLink: "https://www.foxint.com/",
+        type: "fishing",
       },
       {
-        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/greys.png"),
-        brandName: "Greys"
+        brandImageSrc: require("@/assets/images/title-section__branding-line-logos/white overlays/greys.png"),
+        brandName: "Greys",
+        brandLink: "https://greysfishing.co.uk/",
+        type: "fishing",
       },
       {
-        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/nash.png"),
-        brandName: "Nash Fishing"
+        brandImageSrc: require("@/assets/images/title-section__branding-line-logos/white overlays/nash.png"),
+        brandName: "Nash Fishing",
+        brandLink: "https://www.nashtackle.co.uk/en/",
+        type: "fishing",
       },
       {
-        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/nextlevel.png"),
-        brandName: "Next Level"
+        brandImageSrc: require("@/assets/images/title-section__branding-line-logos/white overlays/nextlevel.png"),
+        brandName: "Next Level",
+        brandLink: "https://www.google.com/",
+        type: "fishing",
       },
       {
-        brandLink: require("@/assets/images/title-section__branding-line-logos/white overlays/oceanfish.png"),
-        brandName: "Ocean Fish"
+        brandImageSrc: require("@/assets/images/title-section__branding-line-logos/white overlays/oceanfish.png"),
+        brandName: "Ocean Fish",
+        brandLink: "https://www.google.com/",
+        type: "fishing",
       },
     ],
     headerLinkActiveBackgrounds: [
@@ -90,7 +104,7 @@ export default createStore({
       {
         bannerImage: require("@/assets/images/top-products__images/vest.jpg"),
         headline: "FOX Camo Vest - waterproof",
-        productPrice: 30.00,
+        productPrice: 30.0,
         rating: 5,
       },
       {
@@ -98,6 +112,28 @@ export default createStore({
         headline: "SBS Pellet mix",
         productPrice: 8.45,
         rating: 5,
+      },
+    ],
+    bestClothes: [
+      {
+        itemImageSrc: require("@/assets/images/top-products__images/rod.jpg"),
+        itemName: "Delphin Dinasty XXL 420",
+        itemLink: "/spinning",
+      },
+      {
+        itemImageSrc: require("@/assets/images/top-products__images/reels.jpg"),
+        itemName: "Big River 5000 5:2:2",
+        itemLink: "/spinning",
+      },
+      {
+        itemImageSrc: require("@/assets/images/top-products__images/vest.jpg"),
+        itemName: "FOX Camo Vest - waterproof",
+        itemLink: "/spinning",
+      },
+      {
+        itemImageSrc: require("@/assets/images/top-products__images/sbs-pellet.png"),
+        itemName: "SBS Pellet mix",
+        itemLink: "/spinning",
       },
     ],
     topDiscountProducts: [
@@ -189,7 +225,7 @@ export default createStore({
           },
           {
             linkTitle: "Instagram",
-            linkText: "/about",  
+            linkText: "/about",
           },
           {
             linkTitle: "TikTok",
@@ -203,39 +239,45 @@ export default createStore({
         title: "Boilie rods",
         background: require("@/assets/images/subpage_grid__images/boilierod.jpg"),
         url: "/",
-        content: "Thanks to the quality carp fishing rods we manufacture and distribute, catching even the biggest catch is not a problem!"
+        content:
+          "Thanks to the quality carp fishing rods we manufacture and distribute, catching even the biggest catch is not a problem!",
       },
       {
         title: "Feeder rods",
         background: require("@/assets/images/subpage_grid__images/feederrod.jpg"),
         url: "/",
-        content: "Flexible, reliable, lightweight, medium, and heavy feeder rods are an essential part of quality fishing!"
+        content:
+          "Flexible, reliable, lightweight, medium, and heavy feeder rods are an essential part of quality fishing!",
       },
       {
         title: "Reels",
         background: require("@/assets/images/subpage_grid__images/reels.jpg"),
         url: "/",
-        content: "When it comes to fishing reels, besides the operation of the bearings, the composition of the structure, line management, and brake adjustment, quality is also not the last on the list!"
+        content:
+          "When it comes to fishing reels, besides the operation of the bearings, the composition of the structure, line management, and brake adjustment, quality is also not the last on the list!",
       },
       {
         title: "Baits & feeds",
         background: require("@/assets/images/subpage_grid__images/baitsandfeeds.jpg"),
         url: "/",
-        content: "The feed and bait products manufactured and distributed by our company are market leaders to this day!"
+        content:
+          "The feed and bait products manufactured and distributed by our company are market leaders to this day!",
       },
       {
         title: "Clothes",
         background: require("@/assets/images/subpage_grid__images/clothes.jpg"),
         url: "/",
-        content: "Whether it's about heat or freezing cold, a hallmark of a good fisherman is always high-quality and practical attire, which is an essential part of fishing."
+        content:
+          "Whether it's about heat or freezing cold, a hallmark of a good fisherman is always high-quality and practical attire, which is an essential part of fishing.",
       },
       {
         title: "Accessories",
         background: require("@/assets/images/subpage_grid__images/accessories.jpg"),
         url: "/",
-        content: "Do you need something else? Not a problem at all, you will always find what you desire with us!"
-      }
-    ]
+        content:
+          "Do you need something else? Not a problem at all, you will always find what you desire with us!",
+      },
+    ],
   },
   getters: {},
   mutations: {},
