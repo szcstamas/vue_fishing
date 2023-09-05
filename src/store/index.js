@@ -79,7 +79,7 @@ export default createStore({
         bannerImage: require("@/assets/images/top-products__images/rod.jpg"),
         headline: "Delphin Dinasty XXL 420",
         productPrice: 52.55,
-        rating: 4,
+        rating: 3,
       },
       {
         bannerImage: require("@/assets/images/top-products__images/reels.jpg"),
@@ -91,6 +91,32 @@ export default createStore({
         bannerImage: require("@/assets/images/top-products__images/vest.jpg"),
         headline: "FOX Camo Vest - waterproof",
         productPrice: 30.00,
+        rating: 5,
+      },
+      {
+        bannerImage: require("@/assets/images/top-products__images/sbs-pellet.png"),
+        headline: "SBS Pellet mix",
+        productPrice: 8.45,
+        rating: 5,
+      },
+    ],
+    topDiscountProducts: [
+      {
+        bannerImage: require("@/assets/images/top-products__images/fishing_rod_feeder.png"),
+        headline: "Frenzee FXT",
+        productPrice: 42,
+        rating: 3,
+      },
+      {
+        bannerImage: require("@/assets/images/top-products__images/big_river_reel.png"),
+        headline: "Big River 6000 3:2:1",
+        productPrice: 30,
+        rating: 4,
+      },
+      {
+        bannerImage: require("@/assets/images/top-products__images/fox_vest.png"),
+        headline: "FOX Camo West - Natural",
+        productPrice: 52.55,
         rating: 5,
       },
       {
