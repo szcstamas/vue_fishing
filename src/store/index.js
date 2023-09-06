@@ -422,7 +422,7 @@ export default createStore({
       },
       {
         title: "Hooks & lines",
-        background: require("@/assets/images/subpage_grid__images/hooks.jpg"),
+        background: require("@/assets/images/subpage_grid__images/spinning_hooks.jpg"),
         url: "/",
         content:
           "Hook into success with our cutting-edge spinning hooks. Designed to entice and land the biggest catches, these tools are your secret weapons for angling triumphs!",
