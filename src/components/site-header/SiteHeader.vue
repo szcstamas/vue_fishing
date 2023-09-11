@@ -31,11 +31,15 @@
     </div>
     <div class="site-header__button-line site-header--display-on-tablet">
       <dark-gray-button
-        :buttonText="showMobileMenu ? hideMobileMenuText : showMobileMenuText"
-        @button-event="showMobileMenu = !showMobileMenu"
+        :buttonText="
+          isMobileMenuDisplayed
+            ? hideMobileMenuText
+            : showMobileMenuText
+        "
+        @button-event="showMobileMenu"
       />
     </div>
-    <nav v-if="showMobileMenu" class="site-header__bottom-navigation">
+    <nav v-if="isMobileMenuDisplayed" class="site-header__bottom-navigation">
       <router-link
         v-for="(link, index) in headerLinkHrefs"
         :key="`Links of ${headerLinkTexts[index]} in site-header component`"
@@ -52,19 +56,11 @@
 
 <script>
 import DarkGrayButton from "@/components/site-buttons/DarkGrayButton.vue";
-import { mapState, mapGetters } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
   components: {
     DarkGrayButton,
-  },
-
-  data() {
-    return {
-      showMobileMenu: true,
-      showMobileMenuText: "Show menu",
-      hideMobileMenuText: "Hide menu",
-    };
   },
 
   computed: {
@@ -72,7 +68,14 @@ export default {
       "headerLinkHrefs",
       "headerLinkTexts",
       "headerLinkActiveBackgrounds",
+      "isMobileMenuDisplayed",
+      "showMobileMenuText",
+      "hideMobileMenuText",
     ]),
+  },
+
+  methods: {
+    ...mapActions("header", ["showMobileMenu"]),
   },
 };
 </script>
@@ -249,7 +252,7 @@ export default {
         background-color: $primary_color_dark_blue;
         left: 50%;
         top: 50%;
-        transition: all .1s ease-in-out;
+        transition: all 0.1s ease-in-out;
         transform: translate(-50%, 700%);
         opacity: 0;
       }
@@ -295,7 +298,7 @@ export default {
           left: 50%;
           top: 50%;
           transform: translate(-50%, 700%);
-          opacity: 1!important;
+          opacity: 1 !important;
         }
       }
     }

@@ -1,4 +1,7 @@
 const headerStates = {
+  isMobileMenuDisplayed: true,
+  showMobileMenuText: "Show menu",
+  hideMobileMenuText: "Hide menu",
   headerLinkHrefs: [
     "/",
     "/feeders-and-boilies",
