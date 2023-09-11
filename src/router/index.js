@@ -1,8 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import FeedersAndBoiliesView from '../views/FeedersAndBoiliesView.vue'
-import SpinningView from '../views/SpinningView.vue'
 import ContactView from '../views/ContactView.vue'
+import WebshopMainSwitch from '../views/WebshopMainSwitch.vue'
 
 const routes = [
   {
@@ -13,12 +12,12 @@ const routes = [
   {
     path: '/feeders-and-boilies',
     name: 'feeders-and-boilies',
-    component: FeedersAndBoiliesView
+    component: WebshopMainSwitch
   },
   {
     path: '/spinning',
     name: 'spinning',
-    component: SpinningView
+    component: WebshopMainSwitch
   },
   {
     path: '/contact',
