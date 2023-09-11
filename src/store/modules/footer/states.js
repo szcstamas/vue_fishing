@@ -5,65 +5,50 @@ const footerStates = {
   subscribePlaceholder: "SUBSCRIBE",
   footerTabs: [
     {
-      footerTabTitle: "Home",
       footerTabLinks: [
         {
-          linkTitle: "Top products",
-          linkText: "/",
+          linkURL: "/",
         },
         {
-          linkTitle: "Best of Berkley",
-          linkText: "/best-of-berkley",
+          linkURL: "/best-of-berkley",
         },
         {
-          linkTitle: "Privacy notice",
-          linkText: "/privacy-notice",
+          linkURL: "/privacy-notice",
         },
         {
-          linkTitle: "Impressum",
-          linkText: "/impressum",
+          linkURL: "/impressum",
         },
       ],
     },
     {
-      footerTabTitle: "Products",
       footerTabLinks: [
         {
-          linkTitle: "Feeder",
-          linkText: "/feeders-and-boilies",
+          linkURL: "/feeders-and-boilies",
         },
         {
-          linkTitle: "Boilies",
-          linkText: "/feeders-and-boilies",
+          linkURL: "/feeders-and-boilies",
         },
         {
-          linkTitle: "Spinning",
-          linkText: "/spinning",
+          linkURL: "/spinning",
         },
         {
-          linkTitle: "Clothes",
-          linkText: "/clothes",
+          linkURL: "/clothes",
         },
         {
-          linkTitle: "Licenses",
-          linkText: "/licenses",
+          linkURL: "/licenses",
         },
       ],
     },
     {
-      footerTabTitle: "Community",
       footerTabLinks: [
         {
-          linkTitle: "Facebook",
-          linkText: "/about",
+          linkURL: "/about",
         },
         {
-          linkTitle: "Instagram",
-          linkText: "/about",
+          linkURL: "/about",
         },
         {
-          linkTitle: "TikTok",
-          linkText: "/about",
+          linkURL: "/about",
         },
       ],
     },

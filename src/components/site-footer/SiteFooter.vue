@@ -5,26 +5,26 @@
         <div class="site-footer__top-line__link-container">
           <div
             class="site-footer__top-line__link-box"
-            v-for="{ footerTabTitle, footerTabLinks } in footerTabs"
-            :key="`Link box of ${footerTabTitle} in site-footer`"
+            v-for="({ footerTabLinks }, footerTabIndex) in footerTabs"
+            :key="`Link box of links in footer`"
           >
-            <h4>{{ footerTabTitle }}</h4>
+            <h4>{{ $t(`footerTabs.${footerTabIndex}.footerTabTitle`) }}</h4>
             <li
-              v-for="{ linkText, linkTitle } in footerTabLinks"
-              :key="`Link of ${linkTitle} in site-footer`"
+              v-for="({ linkURL }, footerTabLinkIndex) in footerTabLinks"
+              :key="`Link of key in site-footer`"
             >
-              <router-link :to="linkText">
-                {{ linkTitle }}
+              <router-link :to="linkURL">
+                {{ $t(`footerTabs.${footerTabIndex}.footerTabLinks.${footerTabLinkIndex}`) }}
               </router-link>
             </li>
           </div>
         </div>
         <div class="site-footer__top-line__form-container">
           <form>
-            <h4>{{ subscribeToOurNewsletter }}</h4>
-            <input type="email" :placeholder="emailPlaceholder" />
-            <input type="text" :placeholder="namePlaceholder" />
-            <input type="submit" :value="subscribePlaceholder" />
+            <h4>{{ $t("subscribeToOurNewsletter") }}</h4>
+            <input type="email" :placeholder="$t('emailPlaceholder')" />
+            <input type="text" :placeholder="$t('namePlaceholder')" />
+            <input type="submit" :value="$t('subscribe')" />
           </form>
         </div>
       </div>
@@ -97,6 +97,11 @@ export default {
       background-color: $primary_color_white;
       padding: 2rem;
       border-radius: 10px;
+      width: 30%;
+
+      input[type="submit"] {
+        text-transform: uppercase;
+      }
 
       @media screen and (max-width: 1350px) {
         width: 100%;

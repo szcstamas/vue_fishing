@@ -3,8 +3,8 @@
     <div class="site-header__top-line">
       <div class="site-header__search-form site-header--display-none-tablet">
         <form action="">
-          <input type="text" placeholder="Search..." />
-          <input type="submit" value="SEARCH" />
+          <input type="text" :placeholder="$t('searchPlaceholder')" />
+          <input type="submit" :value="$t('searchValue')" />
         </form>
       </div>
 
@@ -18,23 +18,27 @@
       </div>
 
       <div class="site-header__language-container">
-        <a href="#">EN</a>
-        <span>|</span>
-        <a href="#">HU</a>
+        <button
+          @click="toggleLocale(language)"
+          :disabled="language === $i18n.locale"
+          v-for="language in languageArray"
+        >
+          {{ language }}
+        </button>
       </div>
     </div>
     <div class="site-header__middle-line site-header--display-on-tablet">
       <form action="">
-        <input type="text" placeholder="Search..." />
-        <input type="submit" value="SEARCH" />
+        <input type="text" :placeholder="$t('searchPlaceholder')" />
+        <input type="submit" :value="$t('searchValue')" />
       </form>
     </div>
     <div class="site-header__button-line site-header--display-on-tablet">
       <dark-gray-button
         :buttonText="
           isMobileMenuDisplayed
-            ? hideMobileMenuText
-            : showMobileMenuText
+            ? $t('hideMobileMenuText')
+            : $t('showMobileMenuText')
         "
         @button-event="showMobileMenu"
       />
@@ -42,13 +46,13 @@
     <nav v-if="isMobileMenuDisplayed" class="site-header__bottom-navigation">
       <router-link
         v-for="(link, index) in headerLinkHrefs"
-        :key="`Links of ${headerLinkTexts[index]} in site-header component`"
+        :key="`Links of ${$t(`headerTexts.${index}`)} in site-header component`"
         :style="{
           background: `url('${headerLinkActiveBackgrounds[index]}') no-repeat center right`,
           backgroundSize: '70%',
         }"
         :to="link"
-        >{{ headerLinkTexts[index] }}</router-link
+        >{{ $t(`headerTexts.${index}`) }}</router-link
       >
     </nav>
   </header>
@@ -66,16 +70,28 @@ export default {
   computed: {
     ...mapState("header", [
       "headerLinkHrefs",
-      "headerLinkTexts",
       "headerLinkActiveBackgrounds",
       "isMobileMenuDisplayed",
       "showMobileMenuText",
       "hideMobileMenuText",
+      "languageArray",
     ]),
+
+    isSelectedLanguageActive() {
+      return this.$i18n.messages.en;
+    },
+
+    languageArray() {
+      return Object.keys(this.$i18n.messages);
+    },
   },
 
   methods: {
     ...mapActions("header", ["showMobileMenu"]),
+
+    toggleLocale(languageCode) {
+      this.$i18n.locale = languageCode;
+    },
   },
 };
 </script>
@@ -109,6 +125,7 @@ export default {
 
       input[type="submit"] {
         width: 100%;
+        text-transform: uppercase;
       }
     }
   }
@@ -124,6 +141,10 @@ export default {
       input[type="submit"] {
         width: 100%;
         border-radius: 0;
+      }
+
+      input[type="submit"] {
+        text-transform: uppercase;
       }
     }
   }
@@ -149,49 +170,34 @@ export default {
   }
 
   &__language-container {
+    @include flexColumnOnMobile(center, center, 2rem, row);
     font-size: 18px;
 
-    a {
+    button:not([disabled]) {
+      cursor: pointer;
+    }
+
+    button {
+      appearance: none;
+      outline: none;
+      border: none;
+      text-transform: uppercase;
       isolation: isolate;
       position: relative;
       transition: all 0.1s ease-in-out;
       z-index: 1;
+      padding: 1rem;
+      border-radius: 4px;
 
-      &:hover {
+      &:not([disabled]):hover {
         transform: translateY(-5px);
         color: $primary_color_white;
-      }
-
-      &::after {
-        content: "";
-        opacity: 1;
-        position: absolute;
-        width: 60px;
-        height: 40px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        transform-origin: center;
-        border-radius: 4px;
         background-color: $primary_color_dark_blue;
-        transition: all 0.1s ease-in-out;
-        z-index: -1;
-      }
-
-      &:hover:after {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
       }
     }
 
-    a:first-child {
+    button:first-child {
       margin-left: auto;
-    }
-
-    span {
-      color: $primary_color_dark_blue;
-      font-weight: bold;
-      padding-inline: 2rem;
     }
   }
 

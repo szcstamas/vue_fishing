@@ -1,20 +1,11 @@
 const headerStates = {
   isMobileMenuDisplayed: true,
-  showMobileMenuText: "Show menu",
-  hideMobileMenuText: "Hide menu",
   headerLinkHrefs: [
     "/",
     "/feeders-and-boilies",
     "/spinning",
     "/contact",
     "/about",
-  ],
-  headerLinkTexts: [
-    "Home",
-    "Feeders & Boilies",
-    "Spinning",
-    "Contact",
-    "About",
   ],
   headerLinkActiveBackgrounds: [
     require("@/assets/images/site-header__backgroundImages/01.jpg"),

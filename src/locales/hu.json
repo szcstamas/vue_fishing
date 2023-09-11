@@ -1,0 +1,42 @@
+{
+  "headerTexts": [
+    "Főoldal",
+    "Feeder & Bojli",
+    "Pergetés",
+    "Kapcsolat",
+    "Rólunk"
+  ],
+  "searchPlaceholder": "Keresés...",
+  "searchValue": "Keresés",
+  "showMobileMenuText": "Menü mutatása",
+  "hideMobileMenuText": "Menü elrejtése",
+  "footerTabs": [
+    {
+      "footerTabTitle": "Főoldal",
+      "footerTabLinks": [
+        "Legjobb termékek",
+        "Best of Berkley",
+        "Adatvédelmi tájékoztató",
+        "Impresszum"
+      ]
+    },
+    {
+      "footerTabTitle": "Termékek",
+      "footerTabLinks": [
+        "Feederezés",
+        "Bojlizás",
+        "Pergetés",
+        "Ruházat",
+        "Engedélyek"
+      ]
+    },
+    {
+      "footerTabTitle": "Közösség",
+      "footerTabLinks": ["Facebook", "Instagram", "TikTok"]
+    }
+  ],
+  "subscribe": "Feliratkozás",
+  "subscribeToOurNewsletter": "Iratkozz fel hírlevelünkre!",
+  "emailPlaceholder": "E-mail cím...",
+  "namePlaceholder": "A teljes neved..."
+}

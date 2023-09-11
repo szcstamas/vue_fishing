@@ -1,0 +1,30 @@
+{
+  "headerTexts": ["Home", "Feeder", "Spinning", "Contact", "About"],
+  "searchPlaceholder": "Search...",
+  "searchValue": "Search",
+  "showMobileMenuText": "Show menu",
+  "hideMobileMenuText": "Hide menu",
+  "footerTabs": [
+    {
+      "footerTabTitle": "Home",
+      "footerTabLinks": [
+        "Top products",
+        "Best of Berkley",
+        "Privacy notice",
+        "Impressum"
+      ]
+    },
+    {
+      "footerTabTitle": "Products",
+      "footerTabLinks": ["Feeder", "Boilies", "Spinning", "Clothes", "Licenses"]
+    },
+    {
+      "footerTabTitle": "Community",
+      "footerTabLinks": ["Facebook", "Instagram", "TikTok"]
+    }
+  ],
+  "subscribe": "Subscribe",
+  "subscribeToOurNewsletter": "Subscribe to our newsletter!",
+  "emailPlaceholder": "E-mail address...",
+  "namePlaceholder": "Your name..."
+}
