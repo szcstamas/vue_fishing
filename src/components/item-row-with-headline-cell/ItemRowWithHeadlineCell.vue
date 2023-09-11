@@ -47,7 +47,10 @@
 </template>
 
 <script>
+import sliceArrayMixin from "./sliceArrayMixin.js";
+
 export default {
+  mixins: [sliceArrayMixin],
   props: {
     isReversed: Boolean,
     isBlueBackgroundEnabled: Boolean,
@@ -61,12 +64,6 @@ export default {
     itemArray: {
       type: Array,
       required: true,
-    },
-  },
-
-  computed: {
-    itemArrayMaxOfThreeElements() {
-      return this.itemArray.slice(0, 3);
     },
   },
 };
