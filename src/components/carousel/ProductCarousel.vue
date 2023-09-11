@@ -5,7 +5,7 @@
       v-for="(
         { headline, productPrice, bannerImage, productLink }, index
       ) in arrayOfProducts"
-      :style="{ transform: `translateX(${xValue}%)` }"
+      :style="{ transform: `translateX(${carouselIndex}%)` }"
     >
       <div class="carousel-container__cell carousel-container__image-container">
         <img
@@ -21,7 +21,7 @@
           {{ productPrice }} €
         </p>
         <primary-blue-button
-          :buttonText="textOfCTA"
+          :buttonText="textOfCarouselButton"
           @button-event="jumpToLink(productLink)"
         ></primary-blue-button>
         <div
@@ -66,6 +66,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 import PrimaryBlueButton from "../site-buttons/PrimaryBlueButton.vue";
 
 export default {
@@ -80,23 +81,35 @@ export default {
     PrimaryBlueButton,
   },
 
-  data() {
-    return {
-      xValue: 0,
-      textOfCTA: 'Check it out!'
-    };
+  computed: {
+    ...mapState("carousel", ["textOfCarouselButton", "carouselIndex"]),
   },
 
   methods: {
+    ...mapActions("carousel", [
+      "increaseCarouselIndex",
+      "decreaseCarouselIndex",
+      "setTextOfCarouselButton",
+      "resetCarouselIndex",
+    ]),
     increaseXValue() {
-      return (this.xValue += 100);
+      this.increaseCarouselIndex();
     },
     decreaseXValue() {
-      return (this.xValue -= 100);
+      this.decreaseCarouselIndex();
     },
     jumpToLink(url) {
-      this.$router.push({ path: url })
-    }
+      this.$router.push({ path: url });
+    },
+  },
+
+  //watch function to reset carousel index when route-url changes (if mounted component is still the same)
+  watch: {
+    $route(to, from) {
+      if (to.path !== from.path) {
+        this.resetCarouselIndex();
+      }
+    },
   },
 };
 </script>

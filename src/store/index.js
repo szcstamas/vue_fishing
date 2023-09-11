@@ -4,6 +4,7 @@ import headerModule from "./modules/header";
 import footerModule from "./modules/footer";
 import homepageModule from "./modules/homepage";
 import fishingExpoModule from "./modules/fishing-expo";
+import carouselModule from "./modules/carousel";
 
 export default createStore({
   modules: {
@@ -11,7 +12,8 @@ export default createStore({
     footer: footerModule,
     homepage: homepageModule,
     products: productsModule,
-    fishingExpo: fishingExpoModule
+    fishingExpo: fishingExpoModule,
+    carousel: carouselModule
   },
   state: {},
   getters: {},
