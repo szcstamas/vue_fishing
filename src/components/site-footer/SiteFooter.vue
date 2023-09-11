@@ -9,7 +9,10 @@
             :key="`Link box of ${footerTabTitle} in site-footer`"
           >
             <h4>{{ footerTabTitle }}</h4>
-            <li v-for="{ linkText, linkTitle } in footerTabLinks" :key="`Link of ${linkTitle} in site-footer`">
+            <li
+              v-for="{ linkText, linkTitle } in footerTabLinks"
+              :key="`Link of ${linkTitle} in site-footer`"
+            >
               <router-link :to="linkText">
                 {{ linkTitle }}
               </router-link>
@@ -18,10 +21,10 @@
         </div>
         <div class="site-footer__top-line__form-container">
           <form>
-            <h4>Subscribe to our newsletter</h4>
-            <input type="email" placeholder="E-mail address..." />
-            <input type="text" placeholder="Your name..." />
-            <input type="submit" value="SUBSCRIBE" />
+            <h4>{{ subscribeToOurNewsletter }}</h4>
+            <input type="email" :placeholder="emailPlaceholder" />
+            <input type="text" :placeholder="namePlaceholder" />
+            <input type="submit" :value="subscribePlaceholder" />
           </form>
         </div>
       </div>
@@ -37,7 +40,13 @@ import { mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState("footer", ["footerTabs"]),
+    ...mapState("footer", [
+      "footerTabs",
+      "subscribeToOurNewsletter",
+      "emailPlaceholder",
+      "namePlaceholder",
+      "subscribePlaceholder",
+    ]),
   },
 };
 </script>

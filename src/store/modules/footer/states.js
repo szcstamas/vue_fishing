@@ -1,4 +1,8 @@
 const footerStates = {
+  subscribeToOurNewsletter: "Subscribe to our newsletter",
+  emailPlaceholder: "E-mail address...",
+  namePlaceholder: "Your name...",
+  subscribePlaceholder: "SUBSCRIBE",
   footerTabs: [
     {
       footerTabTitle: "Home",
