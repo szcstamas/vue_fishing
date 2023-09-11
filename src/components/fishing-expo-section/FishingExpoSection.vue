@@ -2,11 +2,9 @@
   <section class="fishing-expo-section">
     <div class="container fishing-expo-section__container">
       <div class="fishing-expo-section__inner">
-        <h4>Save up to -75%</h4>
+        <h4>{{ saveUpTo }}</h4>
         <p>
-          Visit our upcoming fishing expo in June and buy at a great price, even
-          up to 75% off! If you bring a friend with you, you'll receive a bonus
-          gift!
+          {{ visitOurUpcomingFishingExpo }}
         </p>
         <white-button
           :buttonText="textOfExpoButton"
@@ -25,17 +23,20 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import WhiteButton from "../site-buttons/WhiteButton.vue";
 
 export default {
-  data() {
-    return {
-      textOfExpoButton: "Visit site of expo",
-    };
-  },
-
   components: {
     WhiteButton,
+  },
+
+  computed: {
+    ...mapState("fishingExpo", [
+      "saveUpTo",
+      "visitOurUpcomingFishingExpo",
+      "textOfExpoButton",
+    ]),
   },
 
   methods: {
