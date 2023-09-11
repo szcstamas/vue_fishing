@@ -12,15 +12,14 @@
       <div class="top-selling-products-section__item-container">
         <router-link
           to="/feeders-and-boilies"
-          v-for="({ bannerImage, headline, productPrice, rating }, index) in topSellingProducts"
+          v-for="(
+            { bannerImage, headline, productPrice, rating }, index
+          ) in topSellingProducts"
           :key="`Link of ${headline} in top products section on homepage`"
           class="top-selling-products-section__item-box"
         >
           <div class="top-selling-products-section__item-box__image-container">
-            <img
-              :src="bannerImage"
-              :alt="'Picture of ' + headline"
-            />
+            <img :src="bannerImage" :alt="'Picture of ' + headline" />
           </div>
           <h4>{{ headline }}</h4>
           <div class="top-selling-products-section__rating-container">
@@ -29,7 +28,10 @@
           <div class="top-selling-products-section__price-container">
             {{ productPrice }}
           </div>
-          <dark-gray-button isSmallRounded :buttonText="'Add to cart'"></dark-gray-button>
+          <dark-gray-button
+            isSmallRounded
+            :buttonText="'Add to cart'"
+          ></dark-gray-button>
         </router-link>
       </div>
     </div>
@@ -46,7 +48,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["topSellingProducts", "starRatings"]),
+    ...mapState("products", ["topSellingProducts", "starRatings"]),
   },
 };
 </script>

@@ -122,6 +122,13 @@ const productsStates = {
       rating: 5,
     },
   ],
+  starRatings: {
+    1: "⭐",
+    2: "⭐⭐",
+    3: "⭐⭐⭐",
+    4: "⭐⭐⭐⭐",
+    5: "⭐⭐⭐⭐⭐",
+  },
   feederAndBoiliesClothes: [
     {
       itemImageSrc: require("@/assets/images/clothes_images/fishing_hat_1.webp"),

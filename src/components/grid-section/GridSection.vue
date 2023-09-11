@@ -12,7 +12,7 @@
           }"
           class="grid-section__grid-box"
         >
-          <div class="grid-section__grid-box__text-container">  
+          <div class="grid-section__grid-box__text-container">
             <h4>{{ headline }}</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
@@ -42,7 +42,7 @@ export default {
     WhiteButton,
   },
   computed: {
-    ...mapState([
+    ...mapState("homepage", [
       "homepageGridSectionHeadlines",
       "homepageGridSectionBackgroundImages",
     ]),
@@ -110,7 +110,7 @@ export default {
         right: 0;
         bottom: 0;
         transform: translate(200%, 200%);
-        transition-delay: .25s;
+        transition-delay: 0.25s;
       }
 
       &:hover:after {

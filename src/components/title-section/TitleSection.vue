@@ -51,7 +51,8 @@ export default {
     };
   },
   computed: {
-    ...mapState(["brandingLogoImages", "titleSectionBackgroundImages"]),
+    ...mapState("homepage", ["titleSectionBackgroundImages"]),
+    ...mapState("products", ["brandingLogoImages"])
   },
   methods: {
     increasedBackgroundImageIndex(index) {
@@ -168,10 +169,18 @@ export default {
     animation: fade-in 6s ease-in-out infinite;
 
     @keyframes fade-in {
-      0% { opacity: 1; }
-      10% { opacity: 0; }
-      90% { opacity: 0; }
-      100% { opacity: 1; }
+      0% {
+        opacity: 1;
+      }
+      10% {
+        opacity: 0;
+      }
+      90% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
   }
 }

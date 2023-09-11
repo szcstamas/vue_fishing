@@ -68,7 +68,7 @@ export default {
   },
 
   computed: {
-    ...mapState([
+    ...mapState("header", [
       "headerLinkHrefs",
       "headerLinkTexts",
       "headerLinkActiveBackgrounds",
