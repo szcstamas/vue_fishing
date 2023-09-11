@@ -25,8 +25,11 @@
 <script>
 import { mapState } from "vuex";
 import WhiteButton from "../site-buttons/WhiteButton.vue";
+import jumpToLinkMixin from "./jumpToLinkMixin";
 
 export default {
+  mixins: [jumpToLinkMixin],
+
   components: {
     WhiteButton,
   },
@@ -37,12 +40,6 @@ export default {
       "visitOurUpcomingFishingExpo",
       "textOfExpoButton",
     ]),
-  },
-
-  methods: {
-    jumpToLink() {
-      window.open("https://horgaszshow.hu/hu/");
-    },
   },
 };
 </script>
